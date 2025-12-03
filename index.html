@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Gary Hunt – Senior Digital Architect / Full-Stack Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        :root {
+            --bg-main: #05060a;
+            --bg-card: #0b0d15;
+            --bg-chip: #151824;
+            --border-subtle: #202332;
+            --accent: #4fd1c5;
+            --accent-soft: rgba(79, 209, 197, 0.12);
+            --text-main: #f5f5f7;
+            --text-muted: #a0aec0;
+            --text-soft: #7c8699;
+            --danger: #f56565;
+            --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.9);
+            --radius-lg: 18px;
+            --radius-pill: 999px;
+            --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+            sans-serif;
+            --font-mono: "JetBrains Mono", Menlo, Monaco, Consolas, "Liberation Mono",
+            "Courier New", monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at top, #17192b 0, #05060a 55%);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            padding: 32px 16px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .resume {
+            width: 100%;
+            max-width: 1100px;
+            background: linear-gradient(135deg, #070814 0, #05060a 50%, #040509 100%);
+            border-radius: 24px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 32px 32px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resume::before {
+            content: "";
+            position: absolute;
+            inset: -40%;
+            background:
+                    radial-gradient(circle at 0 0, rgba(79, 209, 197, 0.08) 0, transparent 50%),
+                    radial-gradient(circle at 100% 0, rgba(129, 140, 248, 0.07) 0, transparent 55%);
+            opacity: 0.9;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .resume-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 24px;
+            margin-bottom: 24px;
+        }
+
+        .header-top {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .name-block h1 {
+            font-size: 2.2rem;
+            letter-spacing: 0.03em;
+            margin: 0;
+        }
+
+        .name-block h2 {
+            margin: 4px 0 0;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-soft);
+        }
+
+        .location {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        .contact {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            align-items: flex-end;
+            font-size: 0.9rem;
+        }
+
+        .contact-row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg-chip);
+            border-radius: var(--radius-pill);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 5px 12px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .chip.primary {
+            border-color: rgba(79, 209, 197, 0.8);
+            background: linear-gradient(135deg, #0f172a, #0b1618);
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .chip-label {
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.7rem;
+            color: var(--text-soft);
+        }
+
+        .chip-value {
+            font-family: var(--font-mono);
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-preference {
+            font-size: 0.8rem;
+            color: var(--text-soft);
+            text-align: right;
+            margin-top: 4px;
+        }
+
+        .contact-preference strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Sections */
+
+        .section {
+            margin-bottom: 22px;
+            padding: 16px 18px 18px;
+            border-radius: var(--radius-lg);
+            background: rgba(8, 10, 18, 0.9);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text-soft);
+        }
+
+        .section-accent-bar {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(79, 209, 197, 0.5), transparent);
+            opacity: 0.7;
+        }
+
+        .summary-text {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        /* Layout: Skills + Experience */
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 2fr);
+            gap: 18px;
+        }
+
+        @media (max-width: 900px) {
+            .main-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+            .contact {
+                align-items: flex-start;
+            }
+            .contact-preference {
+                text-align: left;
+            }
+        }
+
+        /* Skills */
+
+        .skills-group {
+            margin-bottom: 14px;
+        }
+
+        .skills-heading {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--text-soft);
+            margin-bottom: 6px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            font-size: 0.8rem;
+        }
+
+        .skill-pill {
+            border-radius: var(--radius-pill);
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            padding: 4px 9px;
+            color: var(--text-muted);
+            display: inline-flex;
+            gap: 4px;
+            align-items: baseline;
+            line-height: 1.2;
+        }
+
+        .skill-pill span.label {
+            font-weight: 500;
+            color: #e2e8f0;
+        }
+
+        .skill-pill span.years {
+            font-size: 0.72rem;
+            color: var(--text-soft);
+            font-family: var(--font-mono);
+        }
+
+        /* Experience */
+
+        .job {
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed rgba(51, 65, 85, 0.7);
+        }
+
+        .job:last-of-type {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .job-company {
+            font-size: 0.9rem;
+            color: var(--text-soft);
+            margin-top: 2px;
+        }
+
+        .job-dates {
+            font-size: 0.8rem;
+            color: var(--text-soft);
+            white-space: nowrap;
+            font-family: var(--font-mono);
+        }
+
+        .job-highlights-title {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-soft);
+            margin: 8px 0 4px;
+        }
+
+        .job ul {
+            padding-left: 18px;
+            margin: 0;
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }
+
+        .job ul li {
+            margin-bottom: 4px;
+        }
+
+        .job ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-tech {
+            margin-top: 6px;
+            font-size: 0.8rem;
+            color: var(--text-soft);
+            background: rgba(15, 23, 42, 0.85);
+            border-radius: 12px;
+            padding: 6px 8px;
+            border: 1px solid rgba(148, 163, 184, 0.35);
+        }
+
+        .job-tech strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Education */
+
+        .edu-item {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .edu-item strong {
+            color: #e2e8f0;
+        }
+
+        /* Footer small-note */
+
+        .footer-note {
+            text-align: right;
+            margin-top: 4px;
+            font-size: 0.72rem;
+            color: var(--text-soft);
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+<main class="resume">
+    <div class="resume-inner">
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-top">
+                <div class="name-block">
+                    <h1>Gary Hunt</h1>
+                    <h2>Senior Digital Architect · Senior Full-Stack Developer · SEO & Integration SME</h2>
+                    <div class="location">Freeport, Illinois · United States</div>
+                </div>
+
+                <div class="contact">
+                    <div class="contact-row">
+                        <div class="chip primary">
+                            <span class="chip-label">Best Contact · Text First</span>
+                            <span class="chip-value">Text Not Putting On Github Email Me Please</span>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="chip">
+                            <span class="chip-label">Email</span>
+                            <span class="chip-value">drenfest@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="chip">
+                            <span class="chip-label">LinkedIn</span>
+                            <span class="chip-value">
+                  <a href="https://www.linkedin.com/in/the-web-guy/" target="_blank" rel="noopener noreferrer">
+                    linkedin.com/in/the-web-guy
+                  </a>
+                </span>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="chip">
+                            <span class="chip-label">GitHub</span>
+                            <span class="chip-value">
+                  <a href="https://github.com/drenfest" target="_blank" rel="noopener noreferrer">
+                    github.com/drenfest
+                  </a>
+                </span>
+                        </div>
+                    </div>
+                    <div class="contact-preference">
+                        <strong>Texting</strong> is the fastest way to reach me.<br />
+                        Then <strong>email</strong>, then phone if needed.
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- SUMMARY -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-title">Summary</div>
+                <div class="section-accent-bar"></div>
+            </div>
+            <p class="summary-text">
+                Senior Digital Architect, Full-Stack Developer, SEO Subject Matter Expert (SME), and Integration SME
+                with <strong>11 years of experience</strong> engineering high-performance digital ecosystems. I specialize
+                in automation, technical SEO, custom scoring systems, architectural rescue work, and full-stack development
+                across PHP, JavaScript, Node.js, Svelte, and MySQL.
+            </p>
+            <p class="summary-text" style="margin-top: 6px;">
+                I’m known for building proprietary SEO scoring engines, diagnosing and rebuilding broken infrastructures,
+                optimizing systems for performance and security, and automating workflows end-to-end. I’m targeting
+                senior-level roles in <strong>Full-Stack Engineering</strong>, <strong>Technical SEO Engineering</strong>,
+                <strong>Automation Architecture</strong>, or <strong>Search Analysis Engineering</strong> in the
+                <strong>$150k–$170k</strong> range.
+            </p>
+        </section>
+
+        <!-- MAIN GRID: SKILLS + EXPERIENCE -->
+        <div class="main-grid">
+
+            <!-- SKILLS COLUMN -->
+            <aside class="section">
+                <div class="section-header">
+                    <div class="section-title">Core Technical Skills</div>
+                    <div class="section-accent-bar"></div>
+                </div>
+
+                <div class="skills-group">
+                    <div class="skills-heading">Languages &amp; Frameworks</div>
+                    <div class="skills-list">
+                        <div class="skill-pill"><span class="label">PHP</span><span class="years">11 yrs</span></div>
+                        <div class="skill-pill"><span class="label">JavaScript</span><span class="years">11 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Node.js</span><span class="years">10 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Svelte / SvelteKit</span><span class="years">8 yrs</span></div>
+                        <div class="skill-pill"><span class="label">HTML5</span><span class="years">11 yrs</span></div>
+                        <div class="skill-pill"><span class="label">CSS3</span><span class="years">11 yrs</span></div>
+                        <div class="skill-pill"><span class="label">LESS</span><span class="years">11 yrs</span></div>
+                        <div class="skill-pill"><span class="label">REST APIs</span><span class="years">10 yrs</span></div>
+                        <div class="skill-pill"><span class="label">JSON</span><span class="years">10 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Regex</span><span class="years">10 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Bash Scripting</span><span class="years">8 yrs</span></div>
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <div class="skills-heading">Backend &amp; Database</div>
+                    <div class="skills-list">
+                        <div class="skill-pill"><span class="label">MySQL</span><span class="years">11 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Schema Design</span><span class="years">10 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Query Optimization</span><span class="years">10 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Indexing &amp; Performance</span><span class="years">9 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Cron Automation</span><span class="years">9 yrs</span></div>
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <div class="skills-heading">Search Engineering &amp; SEO</div>
+                    <div class="skills-list">
+                        <div class="skill-pill"><span class="label">Technical SEO</span><span class="years">10 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Local SEO</span><span class="years">9 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Ecommerce SEO</span><span class="years">9 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Semantic Clustering / Vector Scoring</span><span class="years">1 yr</span></div>
+                        <div class="skill-pill"><span class="label">Internal Link Optimization</span><span class="years">9 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Crawl Engineering</span><span class="years">8 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Schema Markup</span><span class="years">8 yrs</span></div>
+                        <div class="skill-pill"><span class="label">SEO Automation</span><span class="years">7 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Screaming Frog</span><span class="years">9 yrs</span></div>
+                        <div class="skill-pill"><span class="label">SEMrush</span><span class="years">9 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Google Search Console</span><span class="years">10 yrs</span></div>
+                        <div class="skill-pill"><span class="label">GA4 / Analytics</span><span class="years">10 yrs</span></div>
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <div class="skills-heading">Systems &amp; Infrastructure</div>
+                    <div class="skills-list">
+                        <div class="skill-pill"><span class="label">WHM/cPanel</span><span class="years">10 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Apache</span><span class="years">10 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Nginx</span><span class="years">7 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Linux Server Admin</span><span class="years">10 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Cloudflare</span><span class="years">8 yrs</span></div>
+                        <div class="skill-pill"><span class="label">DNS Management</span><span class="years">10 yrs</span></div>
+                        <div class="skill-pill"><span class="label">SSL/TLS</span><span class="years">10 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Security Hardening</span><span class="years">8 yrs</span></div>
+                        <div class="skill-pill"><span class="label">VPS Optimization</span><span class="years">8 yrs</span></div>
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <div class="skills-heading">CMS &amp; Ecommerce</div>
+                    <div class="skills-list">
+                        <div class="skill-pill"><span class="label">WordPress</span><span class="years">10 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Shopify</span><span class="years">8 yrs</span></div>
+                        <div class="skill-pill"><span class="label">BigCommerce</span><span class="years">8 yrs</span></div>
+                        <div class="skill-pill"><span class="label">WooCommerce</span><span class="years">8 yrs</span></div>
+                        <div class="skill-pill"><span class="label">OpenCart</span><span class="years">8 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Custom CMS Development</span><span class="years">10 yrs</span></div>
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <div class="skills-heading">Automation &amp; DevOps</div>
+                    <div class="skills-list">
+                        <div class="skill-pill"><span class="label">Git / GitHub</span><span class="years">10 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Composer</span><span class="years">9 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Webpack</span><span class="years">7 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Vite</span><span class="years">4 yrs</span></div>
+                        <div class="skill-pill"><span class="label">PHPStorm / WebStorm</span><span class="years">9 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Postman</span><span class="years">9 yrs</span></div>
+                        <div class="skill-pill"><span class="label">System-Level Automation</span><span class="years">8 yrs</span></div>
+                        <div class="skill-pill"><span class="label">Lighthouse Tooling</span><span class="years">8 yrs</span></div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- EXPERIENCE COLUMN -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-title">Professional Experience</div>
+                    <div class="section-accent-bar"></div>
+                </div>
+
+                <!-- Cain & Company -->
+                <article class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Digital Architect · Senior Full-Stack Developer · Technical SEO Engineer</div>
+                            <div class="job-company">Cain &amp; Company</div>
+                        </div>
+                        <div class="job-dates">Apr 2025 – Nov 2025</div>
+                    </div>
+                    <div class="job-highlights-title">Core Accomplishments</div>
+                    <ul>
+                        <li>Re-architected and rebuilt enterprise WordPress ecosystems, raising Lighthouse scores from ~40–60 → <strong>90+ across major client sites</strong>.</li>
+                        <li>Diagnosed systemic failures across PHP, MySQL, DNS, caching, plugin conflicts, theme frameworks, and hosting environments.</li>
+                        <li>Automated internal-link analysis and keyword clustering, increasing SEO visibility and reducing manual optimization time.</li>
+                        <li>Served as senior technical lead for industrial manufacturing clients requiring rapid, high-stakes architectural corrections.</li>
+                    </ul>
+                    <div class="job-highlights-title">Custom Vector-Based SEO System</div>
+                    <ul>
+                        <li>Built vector similarity and clustering algorithms in Node.js + PHP to analyze semantic relationships between keywords, pages, and topics.</li>
+                        <li>Created a weighted scoring engine combining Lighthouse metrics, crawl output, ranking deltas, and internal link flow.</li>
+                        <li>Automated SEO diagnostics, reducing manual analysis time by <strong>hours per client</strong> and replacing multiple commercial tools.</li>
+                        <li>Identified thin content, ranking anomalies, internal link gaps, and authority loss via vector-weighted rule sets.</li>
+                        <li>Developed dashboards showing authority trends, anomaly detection, cluster scoring, and prioritized opportunities.</li>
+                        <li>Engineered the system using <strong>Node.js, PHP, MySQL, custom crawlers, and proprietary scoring logic</strong>.</li>
+                    </ul>
+                    <div class="job-tech">
+                        <strong>Skills Used / Tech Stack:</strong>
+                        PHP, JavaScript, Node.js, WordPress, MySQL, Svelte, Lighthouse, Screaming Frog, SEMrush, GA4, GSC,
+                        WHM/cPanel, Apache, Git, Cloudflare, DNS, server optimization, custom crawler development
+                    </div>
+                </article>
+
+                <!-- Insight Marketing Solutions -->
+                <article class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">SEO SME · Integration SME · Senior Full-Stack Developer · Systems Administrator (1099)</div>
+                            <div class="job-company">Insight Marketing Solutions</div>
+                        </div>
+                        <div class="job-dates">Oct 2015 – Present</div>
+                    </div>
+                    <div class="job-highlights-title">Core Accomplishments</div>
+                    <ul>
+                        <li>Act as the primary <strong>SEO Subject Matter Expert</strong> and <strong>Integration SME</strong> for complex analytics, CRM, CMS, and ecommerce integrations.</li>
+                        <li>Built full-stack systems, backend tools, and automation frameworks using PHP, JavaScript, Node.js, and MySQL.</li>
+                        <li>Rebuilt hosting environments, hardened security layers, and improved uptime and operational stability.</li>
+                        <li>Implemented automation that reduced reporting and auditing workloads by <strong>80–90%</strong>.</li>
+                        <li>Led Local SEO strategies that consistently placed clients in the <strong>Top 3 Map Pack</strong>.</li>
+                    </ul>
+                    <div class="job-tech">
+                        <strong>Skills Used / Tech Stack:</strong>
+                        PHP, JavaScript, Node.js, WordPress, Shopify, BigCommerce, MySQL, Google Tag Manager, GA4, Google Search Console,
+                        Linux administration, DNS, SSL/TLS, API integrations, Bash automation, SEO tools, server optimization
+                    </div>
+                </article>
+
+                <!-- Hydra-Technologies -->
+                <article class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Senior IT System Administrator · Web Developer · SEO Strategist</div>
+                            <div class="job-company">Hydra-Technologies</div>
+                        </div>
+                        <div class="job-dates">Dec 2015 – Present</div>
+                    </div>
+                    <div class="job-highlights-title">Core Accomplishments</div>
+                    <ul>
+                        <li>Engineered enterprise CMS modules and custom platform features for service-based businesses.</li>
+                        <li>Managed Linux servers, SSL, security, backups, and database optimization.</li>
+                        <li>Executed Local SEO strategies for multi-location organizations.</li>
+                        <li>Built internal automation scripts to streamline recurring operational tasks.</li>
+                    </ul>
+                    <div class="job-tech">
+                        <strong>Skills Used / Tech Stack:</strong>
+                        WordPress, Shopify, BigCommerce, PHP, Node.js, MySQL, Linux administration, Apache, DNS, SSL, schema design,
+                        performance tuning, SEO platforms
+                    </div>
+                </article>
+
+                <!-- Armor Technologies -->
+                <article class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Full-Stack Web Developer · SEO Consultant</div>
+                            <div class="job-company">Armor Technologies</div>
+                        </div>
+                        <div class="job-dates">Jan 2014 – Nov 2015</div>
+                    </div>
+                    <div class="job-highlights-title">Core Accomplishments</div>
+                    <ul>
+                        <li>Built responsive websites and custom CMS solutions using PHP, JavaScript, HTML/CSS, and MySQL.</li>
+                        <li>Delivered SEO strategies that improved rankings for competitive service-based industries.</li>
+                        <li>Enhanced hosting performance, site speed, and backend configuration.</li>
+                    </ul>
+                    <div class="job-tech">
+                        <strong>Skills Used / Tech Stack:</strong>
+                        PHP, JavaScript, MySQL, HTML, CSS, Google Analytics, Google Tag Manager, cPanel/WHM, responsive design
+                    </div>
+                </article>
+
+                <!-- Sawsall Tree Removal -->
+                <article class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Entrepreneur · Lead Operator</div>
+                            <div class="job-company">Sawsall Tree Removal</div>
+                        </div>
+                        <div class="job-dates">Apr 2013 – Oct 2014</div>
+                    </div>
+                    <div class="job-highlights-title">Core Responsibilities</div>
+                    <ul>
+                        <li>Managed operations, scheduling, equipment maintenance, safety protocols, and customer service.</li>
+                        <li>Coordinated crews and ensured efficient completion of work under tight timelines.</li>
+                    </ul>
+                    <div class="job-tech">
+                        <strong>Skills Used / Tech Stack:</strong>
+                        Scheduling, operations management, equipment handling, safety compliance, client communication
+                    </div>
+                </article>
+
+                <!-- Fiat Chrysler -->
+                <article class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Repair Technician · Team Lead</div>
+                            <div class="job-company">Fiat Chrysler Automobiles</div>
+                        </div>
+                        <div class="job-dates">Jan 2011 – Nov 2013</div>
+                    </div>
+                    <div class="job-highlights-title">Core Responsibilities</div>
+                    <ul>
+                        <li>Performed diagnostics, electrical assembly, soldering, and quality control on automotive components.</li>
+                        <li>Trained new team members and served as escalation point for production-line issues.</li>
+                    </ul>
+                    <div class="job-tech">
+                        <strong>Skills Used / Tech Stack:</strong>
+                        Diagnostics, electrical assembly, soldering, quality assurance, process documentation, team leadership
+                    </div>
+                </article>
+
+                <!-- Top to Bottom Tree Service -->
+                <article class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Groundsman · Climber</div>
+                            <div class="job-company">Top to Bottom Tree Service</div>
+                        </div>
+                        <div class="job-dates">Jun 2008 – Oct 2010</div>
+                    </div>
+                    <div class="job-highlights-title">Core Responsibilities</div>
+                    <ul>
+                        <li>Performed tree removal, trimming, rigging, and safe equipment operation.</li>
+                        <li>Maintained strict safety protocols and supported coordinated jobsite execution.</li>
+                    </ul>
+                    <div class="job-tech">
+                        <strong>Skills Used / Tech Stack:</strong>
+                        Rigging, chainsaw operation, climbing equipment, safety procedures, teamwork
+                    </div>
+                </article>
+            </section>
+        </div>
+
+        <!-- EDUCATION -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-title">Education</div>
+                <div class="section-accent-bar"></div>
+            </div>
+            <div class="edu-item">
+                <strong>High School Diploma</strong> — Freeport High School, Freeport, Illinois
+            </div>
+            <div class="footer-note">
+                Preferred contact order: <strong>Text → Email → Call</strong>
+            </div>
+        </section>
+
+    </div>
+</main>
+</body>
+</html>
