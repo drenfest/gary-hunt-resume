@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Gary Hunt – Senior Digital Architect / Full-Stack Developer</title>
+    <title>Gary Hunt – Senior Full-Stack Developer (PHP/Node.js) · Technical SEO Automation</title>
+    <meta name="description" content="Senior Full-Stack Developer and Technical SEO Engineer specializing in automation, Lighthouse performance rescue, crawl/internal-link analysis, and custom SEO scoring systems using PHP, Node.js, Svelte, and MySQL." />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
         :root {
@@ -385,54 +387,109 @@
             color: var(--text-soft);
             font-style: italic;
         }
+/* Expertise (NEW) */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.expertise-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 14px;
+  padding: 12px 12px 10px;
+}
+
+.expertise-card h3 {
+  margin: 0 0 6px;
+  font-size: 0.92rem;
+  color: #e2e8f0;
+}
+
+.expertise-card p {
+  margin: 0 0 8px;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.expertise-card ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.expertise-card li {
+  margin-bottom: 4px;
+}
+.expertise-card li:last-child {
+  margin-bottom: 0;
+}
 
     </style>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://drenfest.github.io/gary-hunt-resume/#gary-hunt",
-  "name": "Gary Hunt",
-  "alternateName": "The Web Guy",
-  "url": "https://drenfest.github.io/gary-hunt-resume/",
-  "description": "Senior Digital Architect, Full-Stack Developer, Technical SEO Specialist, and Integration SME with 11 years of experience engineering high-performance digital ecosystems. Best contact method is text, followed by email, then phone.",
-  "jobTitle": "Senior Digital Architect / Senior Full-Stack Developer",
-  "email": "mailto:drenfest@gmail.com",
-  "sameAs": [
-    "https://www.linkedin.com/in/the-web-guy/",
-    "https://github.com/drenfest"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Freeport",
-    "addressRegion": "IL",
-    "addressCountry": "US"
-  },
-  "knowsAbout": [
-    "PHP", "JavaScript", "Node.js", "Svelte", "SvelteKit", "MySQL",
-    "WordPress", "Shopify", "BigCommerce", "WooCommerce", "OpenCart",
-    "Technical SEO", "Local SEO", "Ecommerce SEO",
-    "Internal Link Optimization", "Crawl Engineering",
-    "Semantic Keyword Clustering", "Vector-Based Scoring",
-    "Schema Markup", "SEO Automation", "Google Analytics", "GA4",
-    "Google Search Console", "Screaming Frog", "SEMrush",
-    "Linux Server Administration", "WHM/cPanel", "Apache", "Nginx",
-    "Cloudflare", "DNS Management", "SSL/TLS",
-    "Security Hardening", "VPS Optimization",
-    "Composer", "Git", "GitHub", "Vite", "Webpack",
-    "REST APIs", "JSON", "Bash Scripting",
-    "System-Level Automation"
-  ],
-  "hasOccupation": {
-    "@type": "Occupation",
-    "name": "Digital Architect, Full-Stack Developer, SEO & Integration SME"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://drenfest.github.io/gary-hunt-resume/"
-  }
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "https://drenfest.github.io/gary-hunt-resume/#profile",
+      "url": "https://drenfest.github.io/gary-hunt-resume/",
+      "name": "Gary Hunt – Senior Full-Stack Developer / Technical SEO Engineer",
+      "description": "Senior Full-Stack Developer and Technical SEO Engineer specializing in automation, Lighthouse performance rescue, crawl/internal-link analysis, and custom SEO scoring systems.",
+      "mainEntity": { "@id": "https://drenfest.github.io/gary-hunt-resume/#gary-hunt" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://drenfest.github.io/gary-hunt-resume/#gary-hunt",
+      "name": "Gary Hunt",
+      "alternateName": "The Web Guy",
+      "url": "https://drenfest.github.io/gary-hunt-resume/",
+      "jobTitle": "Senior Digital Architect / Senior Full-Stack Developer",
+      "email": "mailto:drenfest@gmail.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/the-web-guy/",
+        "https://github.com/drenfest"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Freeport",
+        "addressRegion": "IL",
+        "addressCountry": "US"
+      },
+      "knowsAbout": [
+        "Technical SEO Automation",
+        "Crawl Engineering",
+        "Internal Link Optimization",
+        "Lighthouse Performance Optimization",
+        "PHP",
+        "JavaScript",
+        "Node.js",
+        "Svelte",
+        "SvelteKit",
+        "MySQL",
+        "WordPress",
+        "Shopify",
+        "Cloudflare",
+        "DNS",
+        "SSL/TLS",
+        "GA4",
+        "Google Tag Manager"
+      ]
+    }
+  ]
 }
 </script>
+
 
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S2VKXB0D3S"></script>
@@ -517,6 +574,69 @@
                 <strong>Automation Architecture</strong>, or <strong>Search Analysis Engineering</strong>
             </p>
         </section>
+<!-- EXPERTISE (NEW) -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-title">Areas of Expertise</div>
+    <div class="section-accent-bar"></div>
+  </div>
+
+  <div class="expertise-grid">
+    <div class="expertise-card">
+      <h3>Technical SEO Automation & Search Engineering</h3>
+      <p>
+        I build automated technical SEO systems that replace manual audits and make issues measurable. This includes
+        crawl engineering, internal-link analysis, schema validation, Lighthouse-weighted scoring, anomaly detection,
+        and keyword clustering to surface priority actions.
+      </p>
+      <ul>
+        <li>Internal link flow analysis + opportunity prioritization</li>
+        <li>Custom crawlers and SEO scoring engines (rule + metric weighted)</li>
+        <li>Semantic clustering / vector-based scoring for topic mapping</li>
+      </ul>
+    </div>
+
+    <div class="expertise-card">
+      <h3>Performance & Platform Rescue</h3>
+      <p>
+        I diagnose and rebuild systems when performance, stability, or SEO is failing across multiple layers—code,
+        plugins, caching, hosting, DNS, and analytics. I focus on root-cause fixes that improve runtime performance
+        and crawl efficiency.
+      </p>
+      <ul>
+        <li>Lighthouse remediation (Core Web Vitals, render path, JS/CSS strategy)</li>
+        <li>WordPress ecosystem debugging: theme/framework conflicts, plugin contention</li>
+        <li>Server + edge tuning: caching, compression, headers, Cloudflare strategy</li>
+      </ul>
+    </div>
+
+    <div class="expertise-card">
+      <h3>Full-Stack Engineering & Integrations</h3>
+      <p>
+        I build full-stack systems and integrations across PHP, Node.js, and MySQL—often connecting CMS/ecommerce,
+        analytics, CRMs, and APIs. I design for maintainability and automation so systems don’t rely on manual work.
+      </p>
+      <ul>
+        <li>REST integrations, webhooks, data normalization, and scheduled automation</li>
+        <li>Backend tools + dashboards for operational visibility</li>
+        <li>Schema design, query optimization, indexing, and performance tuning</li>
+      </ul>
+    </div>
+
+    <div class="expertise-card">
+      <h3>Analytics Trust & Measurement Systems</h3>
+      <p>
+        I implement measurement that teams can trust—clean tagging, reliable event models, and dashboards that reflect
+        reality. This supports decisions on SEO, performance, and conversion without guessing.
+      </p>
+      <ul>
+        <li>GA4 / GTM instrumentation and verification</li>
+        <li>Audit/monitoring automation for regressions</li>
+        <li>Reporting systems that reduce manual analysis time</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
         <!-- MAIN GRID: SKILLS + EXPERIENCE -->
         <div class="main-grid">
