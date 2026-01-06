@@ -412,14 +412,64 @@
     }
 
     /* Print */
-    @media print {
-      body { padding: 0; background: #fff; color: #000; }
-      .resume { box-shadow: none; border: none; border-radius: 0; padding: 18px; background: #fff; }
-      .resume::before { display: none; }
-      section.panel, .contact-card, .expertise-card, .job-tech { background: #fff; border-color: #ddd; }
-      a { color: #000; text-decoration: underline; }
-      .chip.primary { color: #000; border-color: #000; }
+      @media print {
+    /* Keep dark theme + gradients */
+    html, body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background: radial-gradient(circle at top, #17192b 0, #05060a 55%) !important;
+      color: #f5f5f7 !important;
+
+      /* Tell browsers to actually print backgrounds */
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
     }
+
+    /* Keep the resume container styling */
+    .resume {
+      background: linear-gradient(135deg, #070814 0, #05060a 50%, #040509 100%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.05) !important;
+      border-radius: 24px !important;
+      box-shadow: none !important; /* optional: avoids weird print shadows */
+      padding: 18px !important;
+    }
+
+    .resume::before {
+      display: block !important; /* keep the subtle glow overlay */
+      opacity: 0.9 !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    /* Keep panel/card backgrounds dark */
+    section.panel,
+    .contact-card,
+    .expertise-card,
+    .job-tech {
+      background: rgba(8, 10, 18, 0.9) !important;
+      border-color: rgba(255, 255, 255, 0.10) !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    /* Keep links readable on dark background */
+    a {
+      color: #4fd1c5 !important;
+      text-decoration: underline !important;
+    }
+
+    /* Keep the “primary chip” style legible */
+    .chip.primary {
+      color: #4fd1c5 !important;
+      border-color: rgba(79, 209, 197, 0.85) !important;
+      background: rgba(79, 209, 197, 0.10) !important;
+    }
+
+    /* Avoid browser adding huge print margins */
+    @page {
+      margin: 0.5in;
+    }
+  }
   </style>
 
   <!-- Schema (privacy-reduced: no address/email/phone in JSON-LD) -->
