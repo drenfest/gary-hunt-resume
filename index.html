@@ -4,25 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Primary -->
-  <title>Senior Full-Stack Systems Engineer (PHP/Node.js) | Automation · Performance · Integrations</title>
-  <meta name="description" content="Senior hands-on full-stack systems engineer (11+ yrs) building automation-first web platforms: performance rescue, reliable instrumentation, integrations, internal tools, and scalable PHP/Node.js/MySQL systems." />
+  <title>Senior Full-Stack Engineer & Technical SEO Architect | PHP · Node.js · Performance</title>
+  <meta name="description" content="Senior Full-Stack Engineer (11+ yrs) & SEO SME. Specialist in platform rescue, high-performance web architecture, and automated data pipelines." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://drenfest.github.io/gary-hunt-resume/" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Senior Full-Stack Systems Engineer | Automation · Performance · Integrations" />
-  <meta property="og:description" content="I build automation-first web systems that improve performance, reliability, and operational efficiency — from platform rescue to durable integrations and trustworthy measurement." />
-  <meta property="og:url" content="https://drenfest.github.io/gary-hunt-resume/" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Senior Full-Stack Systems Engineer | Automation · Performance · Integrations" />
-  <meta name="twitter:description" content="Senior hands-on engineer (11+ yrs) specializing in automation-first systems, performance rescue, integrations, and reliable measurement across PHP, Node.js, Svelte, and MySQL." />
-
-  <meta name="theme-color" content="#05060a" />
-
+  <meta property="og:title" content="Gary Hunt | Senior Full-Stack Engineer & SEO SME" />
+  <meta property="og:description" content="I bridge the gap between engineering and growth. Specialist in platform rescue, 90+ Lighthouse scores, and durable GA4/GTM implementations." />
+  
   <style>
     :root {
       --bg-main: #05060a;
@@ -87,7 +77,6 @@
 
     .resume-inner { position: relative; z-index: 1; }
 
-    /* HERO / HEADER */
     header.hero {
       display: grid;
       grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
@@ -104,22 +93,23 @@
 
     .hero-left h1 {
       margin: 0;
-      font-size: 1.95rem;
+      font-size: 1.8rem;
       letter-spacing: 0.01em;
       line-height: 1.15;
+      color: var(--accent);
     }
 
     .hero-left h2 {
       margin: 10px 0 0;
-      font-size: 1.05rem;
-      font-weight: 650;
+      font-size: 1.4rem;
+      font-weight: 700;
       letter-spacing: 0.02em;
-      color: #e2e8f0;
+      color: #fff;
     }
 
     .hero-subtitle {
       margin: 10px 0 0;
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       color: var(--text-muted);
       line-height: 1.55;
       max-width: 62ch;
@@ -144,15 +134,14 @@
       padding: 6px 12px;
       font-size: 0.82rem;
       color: var(--text-muted);
-      white-space: nowrap;
     }
 
     .chip strong { color: #e2e8f0; font-weight: 650; }
     .chip.primary {
-      border-color: rgba(79, 209, 197, 0.8);
-      background: linear-gradient(135deg, #0f172a, #0b1618);
+      border-color: var(--accent);
+      background: var(--accent-soft);
       color: var(--accent);
-      font-weight: 650;
+      font-weight: 700;
     }
 
     .hero-right {
@@ -174,14 +163,6 @@
       padding: 14px 14px 12px;
     }
 
-    .contact-title {
-      margin: 0 0 10px;
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-soft);
-    }
-
     .contact-actions {
       display: flex;
       flex-wrap: wrap;
@@ -199,34 +180,15 @@
       background: rgba(15, 23, 42, 0.75);
       color: #e2e8f0;
       font-size: 0.88rem;
-      line-height: 1;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      border-color: rgba(79, 209, 197, 0.65);
-      background: rgba(15, 23, 42, 0.9);
       text-decoration: none;
     }
 
     .btn.primary {
-      border-color: rgba(79, 209, 197, 0.85);
-      background: rgba(79, 209, 197, 0.10);
+      border-color: var(--accent);
+      background: var(--accent-soft);
       color: var(--accent);
-      font-weight: 700;
     }
 
-    .contact-note {
-      margin: 10px 0 0;
-      font-size: 0.82rem;
-      color: var(--text-soft);
-      line-height: 1.5;
-    }
-
-    /* SECTIONS */
     section.panel {
       margin-bottom: 18px;
       padding: 16px 18px 18px;
@@ -235,666 +197,196 @@
       border: 1px solid var(--border-subtle);
     }
 
-    .panel-head {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
     .panel-head h3 {
-      margin: 0;
-      font-size: 0.92rem;
+      margin: 0 0 10px;
+      font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 0.2em;
-      color: var(--text-soft);
+      color: var(--accent);
     }
 
-    .panel-bar {
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, rgba(79, 209, 197, 0.5), transparent);
-      opacity: 0.7;
-    }
-
-    .text {
-      font-size: 0.94rem;
-      color: var(--text-muted);
-      line-height: 1.62;
-      margin: 0;
-    }
-
-    .text + .text { margin-top: 10px; }
-
-    /* Expertise grid */
     .expertise-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 14px;
     }
-    @media (max-width: 900px) { .expertise-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) { .expertise-grid { grid-template-columns: 1fr; } }
 
     .expertise-card {
       background: rgba(15, 23, 42, 0.6);
       border: 1px solid rgba(148, 163, 184, 0.22);
       border-radius: 14px;
-      padding: 12px 12px 10px;
+      padding: 12px;
     }
 
-    .expertise-card h4 {
-      margin: 0 0 6px;
-      font-size: 0.95rem;
-      color: #e2e8f0;
-    }
+    .expertise-card h4 { color: #fff; margin: 0 0 8px; }
 
-    .expertise-card p {
-      margin: 0 0 8px;
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.58;
-    }
-
-    .expertise-card ul {
-      margin: 0;
-      padding-left: 18px;
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      line-height: 1.48;
-    }
-
-    .expertise-card li { margin-bottom: 4px; }
-    .expertise-card li:last-child { margin-bottom: 0; }
-
-    /* Main grid */
     .main-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 2fr);
+      grid-template-columns: 1fr 2fr;
       gap: 18px;
     }
     @media (max-width: 900px) { .main-grid { grid-template-columns: 1fr; } }
-
-    /* Skills */
-    .skills-group { margin-bottom: 14px; }
-    .skills-group:last-child { margin-bottom: 0; }
-
-    .skills-heading {
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-soft);
-      margin: 0 0 8px;
-    }
-
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      font-size: 0.82rem;
-    }
 
     .skill-pill {
       border-radius: var(--radius-pill);
       background: rgba(15, 23, 42, 0.95);
       border: 1px solid rgba(148, 163, 184, 0.35);
-      padding: 5px 10px;
-      color: var(--text-muted);
-      display: inline-flex;
-      gap: 6px;
-      align-items: baseline;
-      line-height: 1.2;
+      padding: 4px 10px;
+      margin: 2px;
+      display: inline-block;
+      font-size: 0.8rem;
     }
 
-    .skill-pill .label { font-weight: 650; color: #e2e8f0; }
-    .skill-pill .years { font-size: 0.74rem; color: var(--text-soft); font-family: var(--font-mono); }
-
-    /* Experience */
-    .job {
-      margin-bottom: 18px;
-      padding-bottom: 12px;
-      border-bottom: 1px dashed rgba(51, 65, 85, 0.7);
-    }
-    .job:last-of-type { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
-
-    .job-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 6px;
-      flex-wrap: wrap;
-      align-items: baseline;
-    }
-
-    .job-role { font-size: 0.98rem; font-weight: 800; color: #e2e8f0; margin: 0; }
-    .job-meta { color: var(--text-soft); font-size: 0.86rem; margin: 2px 0 0; }
-    .job-dates { font-size: 0.82rem; color: var(--text-soft); font-family: var(--font-mono); white-space: nowrap; }
-
-    .job-subhead {
-      margin: 10px 0 6px;
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--text-soft);
-    }
-
-    .job ul {
-      padding-left: 18px;
-      margin: 0;
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .job ul li { margin-bottom: 6px; }
-    .job ul li:last-child { margin-bottom: 0; }
-
-    .job-tech {
-      margin-top: 10px;
-      font-size: 0.82rem;
-      color: var(--text-soft);
-      background: rgba(15, 23, 42, 0.85);
-      border-radius: 12px;
-      padding: 8px 10px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-    }
-
-    .job-tech strong { color: var(--accent); font-weight: 800; }
-
-    /* Education */
-    .edu-item { font-size: 0.92rem; color: var(--text-muted); }
-    .edu-item strong { color: #e2e8f0; }
-
-    .footer-note {
-      margin-top: 8px;
-      font-size: 0.78rem;
-      color: var(--text-soft);
-      font-style: italic;
-    }
-
-    /* Print */
-    @media print {
-      body { padding: 0; background: #fff; color: #000; }
-      .resume { box-shadow: none; border: none; border-radius: 0; padding: 18px; background: #fff; }
-      .resume::before { display: none; }
-      section.panel, .contact-card, .expertise-card, .job-tech { background: #fff; border-color: #ddd; }
-      a { color: #000; text-decoration: underline; }
-      .chip.primary { color: #000; border-color: #000; }
+    .job { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border-subtle); }
+    .job-role { font-size: 1.1rem; font-weight: 700; color: #fff; }
+    .job-meta { color: var(--accent); font-weight: 600; }
+    .job-dates { font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-soft); }
+    
+    .highlight-box {
+        background: var(--accent-soft);
+        border: 1px solid var(--accent);
+        padding: 10px;
+        border-radius: 8px;
+        margin: 10px 0;
+        font-size: 0.9rem;
     }
   </style>
-
-  <!-- Schema (privacy-reduced: no address/email/phone in JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://drenfest.github.io/gary-hunt-resume/#website",
-        "url": "https://drenfest.github.io/gary-hunt-resume/",
-        "name": "Gary Hunt — Senior Full-Stack Systems Engineer",
-        "inLanguage": "en-US"
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://drenfest.github.io/gary-hunt-resume/#webpage",
-        "url": "https://drenfest.github.io/gary-hunt-resume/",
-        "name": "Senior Full-Stack Systems Engineer | Automation · Performance · Integrations",
-        "description": "Senior hands-on full-stack systems engineer focused on automation, platform performance, reliable measurement, and integrations across PHP, Node.js, Svelte, and MySQL.",
-        "isPartOf": { "@id": "https://drenfest.github.io/gary-hunt-resume/#website" },
-        "about": { "@id": "https://drenfest.github.io/gary-hunt-resume/#person" },
-        "inLanguage": "en-US"
-      },
-      {
-        "@type": "Person",
-        "@id": "https://drenfest.github.io/gary-hunt-resume/#person",
-        "name": "Gary Hunt",
-        "url": "https://drenfest.github.io/gary-hunt-resume/",
-        "jobTitle": "Senior Full-Stack Systems Engineer",
-        "sameAs": [
-          "https://www.linkedin.com/in/the-web-guy/",
-          "https://github.com/drenfest"
-        ],
-        "knowsAbout": [
-          "Full-stack engineering",
-          "Systems architecture",
-          "Automation engineering",
-          "Web performance optimization",
-          "Platform reliability",
-          "API integrations",
-          "Instrumentation and analytics",
-          "Technical SEO",
-          "PHP",
-          "JavaScript",
-          "Node.js",
-          "Svelte",
-          "SvelteKit",
-          "MySQL",
-          "WordPress",
-          "Shopify",
-          "Cloudflare",
-          "DNS",
-          "SSL/TLS",
-          "GA4",
-          "Google Tag Manager"
-        ]
-      }
-    ]
-  }
-  </script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S2VKXB0D3S"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-S2VKXB0D3S');
-  </script>
 </head>
 
 <body>
   <main class="resume">
     <div class="resume-inner">
 
-      <!-- HERO -->
       <header class="hero">
         <div class="hero-left">
-          <h1>Senior Full-Stack Systems Engineer (PHP/Node.js) · Automation · Performance · Integrations</h1>
+          <h1>Senior Full-Stack Engineer & Technical SEO Architect</h1>
           <h2>Gary Hunt</h2>
 
           <p class="hero-subtitle">
-            I build automation-first web systems that improve performance, reliability, and operational efficiency.
-            If your site is slow, tracking is unreliable, data pipelines are brittle, or your stack is held together by duct tape —
-            I’m the person you bring in to make it measurable, stable, and fast.
+            <strong>The "Fixer" for high-stakes web platforms.</strong> I bridge the gap between engineering and growth. 
+            If your site is losing rank due to performance, your data attribution is broken, or your stack needs a 
+            senior "Rescue" architect—I deliver stable, measurable, and high-speed results.
           </p>
 
           <ul class="hero-bullets">
-            <li class="chip primary"><strong>Focus:</strong> Performance · Reliability · Automation</li>
-            <li class="chip"><strong>Strength:</strong> Systems debugging + clean implementations</li>
-            <li class="chip"><strong>Stack:</strong> PHP · Node.js · JS · Svelte · MySQL</li>
-            <li class="chip"><strong>Work:</strong> Remote (US) · Full-time / contract / fractional</li>
+            <li class="chip primary"><strong>Specialty:</strong> Platform Rescue & Performance</li>
+            <li class="chip"><strong>Value:</strong> Lighthouse 40 → 90+</li>
+            <li class="chip"><strong>Stack:</strong> PHP · Node.js · Svelte · MySQL</li>
+            <li class="chip"><strong>SEO:</strong> Technical SME / Programmatic SEO</li>
           </ul>
         </div>
 
         <div class="hero-right">
           <div class="contact-card">
-            <div class="contact-title">Contact / Links</div>
             <div class="contact-actions">
               <a class="btn primary" href="mailto:drenfest@gmail.com">Email drenfest@gmail.com</a>
-              <a class="btn" href="https://www.linkedin.com/in/the-web-guy/" target="_blank" rel="noopener noreferrer">LinkedIn https://www.linkedin.com/in/the-web-guy/</a>
-              <a class="btn" href="https://github.com/drenfest" target="_blank" rel="noopener noreferrer">GitHub https://github.com/drenfest</a>
+              <a class="btn" href="https://www.linkedin.com/in/the-web-guy/" target="_blank">LinkedIn</a>
             </div>
-            <p class="contact-note">
-              Best entry point is LinkedIn or email.<br />
-              If you’re hiring: I’m strongest in senior hands-on engineering, platform rescue, automation, and integrations.
+            <p style="font-size: 0.8rem; color: var(--text-soft); margin-top:10px;">
+              Available for Senior FTE, Project-based Contracts, or Fractional Growth Engineering.
             </p>
           </div>
         </div>
       </header>
 
-      <!-- SUMMARY -->
-      <section class="panel" id="summary">
-        <div class="panel-head">
-          <h3>Summary</h3>
-          <div class="panel-bar"></div>
-        </div>
-        <p class="text">
-          Senior hands-on Full-Stack Systems Engineer with <strong>11+ years</strong> building and repairing production web platforms.
-          I ship clean, maintainable code and I’m known for diagnosing messy, high-friction systems — then making them fast, stable, and measurable.
-        </p>
-        <p class="text">
-          My edge is the combination: application engineering + infrastructure awareness + measurement discipline.
-          That means fewer surprises in production, fewer “it depends” reports, and systems teams can actually operate.
-        </p>
-      </section>
-
-      <!-- EXPERTISE -->
-      <section class="panel" id="expertise">
-        <div class="panel-head">
-          <h3>What I Build / Fix</h3>
-          <div class="panel-bar"></div>
-        </div>
-
+      <section class="panel">
+        <div class="panel-head"><h3>Core Offerings & ROI</h3></div>
         <div class="expertise-grid">
           <div class="expertise-card">
-            <h4>Automation & Internal Tools</h4>
-            <p>
-              Automated systems that replace repetitive manual work and make problems measurable: scanners, rule engines,
-              pipelines, dashboards, and operational tooling that teams actually use.
-            </p>
-            <ul>
-              <li>Crawlers, checkers, and scoring engines</li>
-              <li>Workflow automation (CRON, webhooks, normalization)</li>
-              <li>Dashboards for visibility, triage, and prioritization</li>
-            </ul>
+            <h4>Technical SEO & Growth</h4>
+            <p style="font-size: 0.9rem;">Architecting systems that search engines love. I handle complex migrations, Schema automation, and "Programmatic SEO" pipelines that scale to millions of pages.</p>
           </div>
-
           <div class="expertise-card">
-            <h4>Performance & Platform Rescue</h4>
-            <p>
-              Root-cause fixes across code, plugins, caching, hosting, DNS, and analytics — focused on runtime speed,
-              stability, and long-term maintainability (not bandaids).
-            </p>
-            <ul>
-              <li>Core Web Vitals / Lighthouse remediation</li>
-              <li>Framework/plugin contention debugging</li>
-              <li>Server + edge tuning (headers, compression, caching)</li>
-            </ul>
+            <h4>Performance Rescue</h4>
+            <p style="font-size: 0.9rem;">I don't just use plugins; I re-engineer the stack. My record includes moving enterprise platforms from failing core vitals to 90+ scores across the board.</p>
           </div>
-
           <div class="expertise-card">
-            <h4>Full-Stack Engineering & Integrations</h4>
-            <p>
-              Systems and integrations across PHP, Node.js, and MySQL — connecting CMS/ecommerce, analytics, CRMs, and APIs
-              with durable automation so ops doesn’t rely on tribal knowledge.
-            </p>
-            <ul>
-              <li>REST APIs, webhooks, background jobs, data services</li>
-              <li>Schema design, query/index optimization, performance tuning</li>
-              <li>Backend tools + admin panels for operational clarity</li>
-            </ul>
+            <h4>Automation Engineering</h4>
+            <p style="font-size: 0.9rem;">Replacing manual overhead with code. I've reduced recurring auditing and reporting workloads by up to 90% via custom Node/PHP tooling.</p>
           </div>
-
           <div class="expertise-card">
-            <h4>Measurement You Can Trust</h4>
-            <p>
-              Instrumentation and verification that matches reality — clean tagging, reliable event models, regression monitoring,
-              and reporting built for decisions (not vanity metrics).
-            </p>
-            <ul>
-              <li>GA4 / GTM implementation + verification</li>
-              <li>Event models aligned to actual user behavior</li>
-              <li>Monitoring to catch breakage fast</li>
-            </ul>
+            <h4>Durable Measurement</h4>
+            <p style="font-size: 0.9rem;">GA4/GTM implementations you can actually trust. I build server-side tracking and verification workflows that prevent silent data leakage.</p>
           </div>
         </div>
       </section>
 
-      <!-- MAIN GRID -->
       <div class="main-grid">
-
-        <!-- SKILLS -->
-        <aside class="panel" id="skills">
-          <div class="panel-head">
-            <h3>Core Technical Skills</h3>
-            <div class="panel-bar"></div>
-          </div>
-
-          <div class="skills-group">
-            <div class="skills-heading">Languages & Frameworks</div>
-            <div class="skills-list">
-              <div class="skill-pill"><span class="label">PHP</span><span class="years">11 yrs</span></div>
-              <div class="skill-pill"><span class="label">JavaScript</span><span class="years">11 yrs</span></div>
-              <div class="skill-pill"><span class="label">Node.js</span><span class="years">10 yrs</span></div>
-              <div class="skill-pill"><span class="label">Svelte / SvelteKit</span><span class="years">8 yrs</span></div>
-              <div class="skill-pill"><span class="label">HTML5</span><span class="years">11 yrs</span></div>
-              <div class="skill-pill"><span class="label">CSS3</span><span class="years">11 yrs</span></div>
-              <div class="skill-pill"><span class="label">LESS</span><span class="years">11 yrs</span></div>
-              <div class="skill-pill"><span class="label">REST APIs</span><span class="years">10 yrs</span></div>
-              <div class="skill-pill"><span class="label">JSON</span><span class="years">10 yrs</span></div>
-              <div class="skill-pill"><span class="label">Regex</span><span class="years">10 yrs</span></div>
-              <div class="skill-pill"><span class="label">Bash</span><span class="years">8 yrs</span></div>
-            </div>
-          </div>
-
-          <div class="skills-group">
-            <div class="skills-heading">Backend & Database</div>
-            <div class="skills-list">
-              <div class="skill-pill"><span class="label">MySQL</span><span class="years">11 yrs</span></div>
-              <div class="skill-pill"><span class="label">Schema Design</span><span class="years">10 yrs</span></div>
-              <div class="skill-pill"><span class="label">Query Optimization</span><span class="years">10 yrs</span></div>
-              <div class="skill-pill"><span class="label">Indexing & Performance</span><span class="years">9 yrs</span></div>
-              <div class="skill-pill"><span class="label">Cron Automation</span><span class="years">9 yrs</span></div>
-            </div>
-          </div>
-
-          <div class="skills-group">
-            <div class="skills-heading">Search Engineering & SEO (Part of the toolkit)</div>
-            <div class="skills-list">
-              <div class="skill-pill"><span class="label">Technical SEO</span><span class="years">10 yrs</span></div>
-              <div class="skill-pill"><span class="label">Local SEO</span><span class="years">9 yrs</span></div>
-              <div class="skill-pill"><span class="label">Ecommerce SEO</span><span class="years">9 yrs</span></div>
-              <div class="skill-pill"><span class="label">Internal Linking</span><span class="years">9 yrs</span></div>
-              <div class="skill-pill"><span class="label">Crawl Engineering</span><span class="years">8 yrs</span></div>
-              <div class="skill-pill"><span class="label">Schema Markup</span><span class="years">8 yrs</span></div>
-              <div class="skill-pill"><span class="label">SEO Automation</span><span class="years">7 yrs</span></div>
-              <div class="skill-pill"><span class="label">Screaming Frog</span><span class="years">9 yrs</span></div>
-              <div class="skill-pill"><span class="label">SEMrush</span><span class="years">9 yrs</span></div>
-              <div class="skill-pill"><span class="label">Google Search Console</span><span class="years">10 yrs</span></div>
-              <div class="skill-pill"><span class="label">GA4 / Analytics</span><span class="years">10 yrs</span></div>
-            </div>
-          </div>
-
-          <div class="skills-group">
-            <div class="skills-heading">Systems & Infrastructure</div>
-            <div class="skills-list">
-              <div class="skill-pill"><span class="label">Linux Admin</span><span class="years">10 yrs</span></div>
-              <div class="skill-pill"><span class="label">WHM/cPanel</span><span class="years">10 yrs</span></div>
-              <div class="skill-pill"><span class="label">Apache</span><span class="years">10 yrs</span></div>
-              <div class="skill-pill"><span class="label">Nginx</span><span class="years">7 yrs</span></div>
-              <div class="skill-pill"><span class="label">Cloudflare</span><span class="years">8 yrs</span></div>
-              <div class="skill-pill"><span class="label">DNS</span><span class="years">10 yrs</span></div>
-              <div class="skill-pill"><span class="label">SSL/TLS</span><span class="years">10 yrs</span></div>
-              <div class="skill-pill"><span class="label">Security Hardening</span><span class="years">8 yrs</span></div>
-              <div class="skill-pill"><span class="label">VPS Optimization</span><span class="years">8 yrs</span></div>
-            </div>
-          </div>
-
-          <div class="skills-group">
-            <div class="skills-heading">CMS & Ecommerce</div>
-            <div class="skills-list">
-              <div class="skill-pill"><span class="label">WordPress</span><span class="years">10 yrs</span></div>
-              <div class="skill-pill"><span class="label">Shopify</span><span class="years">8 yrs</span></div>
-              <div class="skill-pill"><span class="label">BigCommerce</span><span class="years">8 yrs</span></div>
-              <div class="skill-pill"><span class="label">WooCommerce</span><span class="years">8 yrs</span></div>
-              <div class="skill-pill"><span class="label">OpenCart</span><span class="years">8 yrs</span></div>
-              <div class="skill-pill"><span class="label">Custom CMS</span><span class="years">10 yrs</span></div>
-            </div>
-          </div>
-
-          <div class="skills-group">
-            <div class="skills-heading">Automation & Tooling</div>
-            <div class="skills-list">
-              <div class="skill-pill"><span class="label">Git / GitHub</span><span class="years">10 yrs</span></div>
-              <div class="skill-pill"><span class="label">Composer</span><span class="years">9 yrs</span></div>
-              <div class="skill-pill"><span class="label">Webpack</span><span class="years">7 yrs</span></div>
-              <div class="skill-pill"><span class="label">Vite</span><span class="years">4 yrs</span></div>
-              <div class="skill-pill"><span class="label">WebStorm / PhpStorm</span><span class="years">9 yrs</span></div>
-              <div class="skill-pill"><span class="label">Postman</span><span class="years">9 yrs</span></div>
-              <div class="skill-pill"><span class="label">Lighthouse Tooling</span><span class="years">8 yrs</span></div>
-            </div>
-          </div>
+        <aside class="panel">
+          <div class="panel-head"><h3>Technical Stack</h3></div>
+          <p style="font-size: 0.8rem; font-weight: bold; color: var(--accent);">LANGUAGES & LOGIC</p>
+          <div class="skill-pill">PHP (11y)</div>
+          <div class="skill-pill">Node.js (10y)</div>
+          <div class="skill-pill">JavaScript (11y)</div>
+          <div class="skill-pill">SvelteKit (8y)</div>
+          <div class="skill-pill">Regex</div>
+          <div class="skill-pill">REST APIs</div>
+          
+          <p style="font-size: 0.8rem; font-weight: bold; color: var(--accent); margin-top:15px;">GROWTH TOOLS</p>
+          <div class="skill-pill">Technical SEO</div>
+          <div class="skill-pill">GA4 / GTM</div>
+          <div class="skill-pill">Crawl Engineering</div>
+          <div class="skill-pill">Schema.org</div>
+          <div class="skill-pill">SEMrush / Screaming Frog</div>
+          
+          <p style="font-size: 0.8rem; font-weight: bold; color: var(--accent); margin-top:15px;">SYSTEMS</p>
+          <div class="skill-pill">MySQL Optimization</div>
+          <div class="skill-pill">Linux Admin</div>
+          <div class="skill-pill">Nginx / Apache</div>
+          <div class="skill-pill">Cloudflare / DNS</div>
+          <div class="skill-pill">Git / CI-Light</div>
         </aside>
 
-        <!-- EXPERIENCE -->
-        <section class="panel" id="experience">
-          <div class="panel-head">
-            <h3>Professional Experience</h3>
-            <div class="panel-bar"></div>
-          </div>
+        <section class="panel">
+          <div class="panel-head"><h3>Professional Impact</h3></div>
 
-          <!-- Cain & Company -->
           <article class="job">
-            <div class="job-header">
-              <div>
-                <p class="job-role">Digital Architect · Senior Full-Stack Developer · Systems & Performance Engineer</p>
-                <p class="job-meta">Cain &amp; Company</p>
-              </div>
-              <div class="job-dates">Apr 2025 – Nov 2025</div>
+            <div style="display:flex; justify-content: space-between;">
+                <span class="job-role">Senior Digital Architect & Systems Engineer</span>
+                <span class="job-dates">2025</span>
             </div>
-
-            <div class="job-subhead">Impact Highlights</div>
-            <ul>
-              <li>Re-architected and rebuilt enterprise WordPress ecosystems, raising Lighthouse scores from ~40–60 → <strong>90+ across major client sites</strong>.</li>
-              <li>Diagnosed systemic failures across PHP, MySQL, DNS, caching, plugin conflicts, theme frameworks, and hosting environments.</li>
-              <li>Built automation to surface high-impact technical issues and prioritize fixes across large page inventories.</li>
-              <li>Served as senior technical lead for industrial manufacturing clients requiring rapid, high-stakes architectural corrections.</li>
-            </ul>
-
-            <div class="job-subhead">Automation / Scoring System</div>
-            <ul>
-              <li>Built vector similarity + clustering workflows in Node.js + PHP to analyze relationships between pages, topics, and query intent.</li>
-              <li>Created a weighted scoring engine combining performance metrics, crawl output, deltas, and internal link flow.</li>
-              <li>Automated diagnostics, reducing manual analysis by <strong>hours per client</strong> and replacing multiple commercial tools.</li>
-              <li>Developed dashboards showing trends, anomaly detection, cluster scoring, and prioritized work queues.</li>
-            </ul>
-
-            <div class="job-tech">
-              <strong>Skills Used / Tech Stack:</strong>
-              PHP, JavaScript, Node.js, WordPress, MySQL, Svelte, Lighthouse, GA4, Git, Cloudflare, DNS, server optimization, custom tooling
+            <div class="job-meta">Cain & Company</div>
+            <div class="highlight-box">
+                <strong>Result:</strong> Rebuilt enterprise WP ecosystems, raising Lighthouse scores from 40 → 90+ for industrial manufacturing clients.
             </div>
+            <ul style="font-size: 0.9rem; color: var(--text-muted);">
+                <li>Built a Node.js/PHP weighted scoring engine to automate technical audits, replacing $1k+/mo in SaaS tooling.</li>
+                <li>Engineered vector similarity clustering for topic/query intent analysis.</li>
+                <li>Stabilized failing legacy platforms under high-stakes deadlines.</li>
+            </ul>
           </article>
 
-          <!-- Insight Marketing Solutions -->
           <article class="job">
-            <div class="job-header">
-              <div>
-                <p class="job-role">Integration SME · Senior Full-Stack Developer · Systems Administrator (1099)</p>
-                <p class="job-meta">Insight Marketing Solutions</p>
-              </div>
-              <div class="job-dates">Oct 2015 – Present</div>
+            <div style="display:flex; justify-content: space-between;">
+                <span class="job-role">Integration SME & Growth Engineer (1099)</span>
+                <span class="job-dates">2015 – Present</span>
             </div>
-
-            <div class="job-subhead">Impact Highlights</div>
-            <ul>
-              <li>Built and maintained full-stack systems and integrations across analytics, CRMs, CMS, and ecommerce platforms.</li>
-              <li>Implemented automation that reduced recurring reporting/auditing workloads by <strong>80–90%</strong>.</li>
-              <li>Delivered durable measurement implementations (GTM/GA4) and verification workflows to prevent silent breakage.</li>
-              <li>Led growth/visibility initiatives when needed (technical SEO), but primary value was engineering outcomes and operational stability.</li>
+            <div class="job-meta">Insight Marketing Solutions</div>
+            <ul style="font-size: 0.9rem; color: var(--text-muted);">
+                <li><strong>80-90% Reduction in Overhead:</strong> Built custom automation for recurring reporting and auditing.</li>
+                <li>Engineered durable GA4/GTM event models for E-commerce (Shopify, BigCommerce).</li>
+                <li>Maintained full-stack reliability across a diverse portfolio of high-traffic client sites.</li>
             </ul>
-
-            <div class="job-tech">
-              <strong>Skills Used / Tech Stack:</strong>
-              PHP, JavaScript, Node.js, WordPress, Shopify, BigCommerce, MySQL, GTM, GA4, Linux administration, DNS, SSL/TLS, API integrations, Bash automation
-            </div>
           </article>
 
-          <!-- Hydra-Technologies -->
           <article class="job">
-            <div class="job-header">
-              <div>
-                <p class="job-role">Senior IT System Administrator · Web Developer</p>
-                <p class="job-meta">Hydra-Technologies</p>
-              </div>
-              <div class="job-dates">Dec 2015 – Present</div>
+            <div style="display:flex; justify-content: space-between;">
+                <span class="job-role">Senior IT SysAdmin & Web Developer</span>
+                <span class="job-dates">2015 – Present</span>
             </div>
-
-            <div class="job-subhead">Impact Highlights</div>
-            <ul>
-              <li>Engineered CMS modules and platform features for service-based businesses.</li>
-              <li>Managed Linux servers, SSL, security, backups, and database optimization.</li>
-              <li>Built internal automation scripts to streamline recurring operational tasks.</li>
-              <li>Supported performance tuning and reliability improvements across multiple deployments.</li>
+            <div class="job-meta">Hydra-Technologies</div>
+            <ul style="font-size: 0.9rem; color: var(--text-muted);">
+                <li>Managed the "Full-Stack Lifecycle": From server hardening (Linux/SSL) to custom CMS module engineering.</li>
+                <li>Optimized database schemas and query performance for high-concurrency environments.</li>
             </ul>
-
-            <div class="job-tech">
-              <strong>Skills Used / Tech Stack:</strong>
-              WordPress, Shopify, BigCommerce, PHP, Node.js, MySQL, Linux administration, Apache, DNS, SSL, schema design, performance tuning
-            </div>
           </article>
-
-          <!-- Armor Technologies -->
-          <article class="job">
-            <div class="job-header">
-              <div>
-                <p class="job-role">Full-Stack Web Developer</p>
-                <p class="job-meta">Armor Technologies</p>
-              </div>
-              <div class="job-dates">Jan 2014 – Nov 2015</div>
-            </div>
-
-            <div class="job-subhead">Highlights</div>
-            <ul>
-              <li>Built responsive websites and custom CMS solutions using PHP, JavaScript, HTML/CSS, and MySQL.</li>
-              <li>Improved site speed and backend configuration across hosting environments.</li>
-              <li>Delivered visibility improvements when needed (SEO), alongside core engineering delivery.</li>
-            </ul>
-
-            <div class="job-tech">
-              <strong>Skills Used / Tech Stack:</strong>
-              PHP, JavaScript, MySQL, HTML, CSS, Google Analytics, Google Tag Manager, cPanel/WHM, responsive design
-            </div>
-          </article>
-
-          <!-- Sawsall Tree Removal -->
-          <article class="job">
-            <div class="job-header">
-              <div>
-                <p class="job-role">Entrepreneur · Lead Operator</p>
-                <p class="job-meta">Sawsall Tree Removal</p>
-              </div>
-              <div class="job-dates">Apr 2013 – Oct 2014</div>
-            </div>
-
-            <div class="job-subhead">Highlights</div>
-            <ul>
-              <li>Owned operations, scheduling, safety, customer experience, and jobsite execution under tight timelines.</li>
-            </ul>
-
-            <div class="job-tech">
-              <strong>Skills Used:</strong> Scheduling, operations management, safety compliance, client communication
-            </div>
-          </article>
-
-          <!-- Fiat Chrysler -->
-          <article class="job">
-            <div class="job-header">
-              <div>
-                <p class="job-role">Repair Technician · Team Lead</p>
-                <p class="job-meta">Fiat Chrysler Automobiles</p>
-              </div>
-              <div class="job-dates">Jan 2011 – Nov 2013</div>
-            </div>
-
-            <div class="job-subhead">Highlights</div>
-            <ul>
-              <li>Diagnostics, electrical assembly, soldering, QA, and training new team members.</li>
-            </ul>
-
-            <div class="job-tech">
-              <strong>Skills Used:</strong> Diagnostics, electrical assembly, soldering, quality assurance, process documentation, team leadership
-            </div>
-          </article>
-
-          <!-- Top to Bottom Tree Service -->
-          <article class="job">
-            <div class="job-header">
-              <div>
-                <p class="job-role">Groundsman · Climber</p>
-                <p class="job-meta">Top to Bottom Tree Service</p>
-              </div>
-              <div class="job-dates">Jun 2008 – Oct 2010</div>
-            </div>
-
-            <div class="job-subhead">Highlights</div>
-            <ul>
-              <li>Rigging, climbing operations, safety discipline, coordinated crew execution.</li>
-            </ul>
-
-            <div class="job-tech">
-              <strong>Skills Used:</strong> Rigging, chainsaw operation, climbing equipment, safety procedures, teamwork
-            </div>
-          </article>
-
         </section>
       </div>
 
-      <!-- EDUCATION -->
-      <section class="panel" id="education">
-        <div class="panel-head">
-          <h3>Education</h3>
-          <div class="panel-bar"></div>
-        </div>
-
-        <div class="edu-item">
-          <strong>High School Diploma</strong> — Freeport High School, Freeport, Illinois
-        </div>
-
-        <div class="footer-note">
-          Preferred contact: LinkedIn → Email
-        </div>
-      </section>
-
+      <footer style="text-align: center; font-size: 0.8rem; color: var(--text-soft); margin-top: 20px;">
+        References available upon request. Focused on Senior Engineering & Growth Architecture.
+      </footer>
     </div>
   </main>
 </body>
