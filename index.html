@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Primary -->
-  <title>Senior Fullstack Product Engineer | Ownership · Scale · Velocity</title>
-  <meta name="description" content="Senior Fullstack Engineer (12+ yrs) shipping product experiences and backend services with strong ownership, performance discipline, and automation. Expert in JS/TS, Node, PHP, SQL, and component-driven UI (SvelteKit)."/>
+  <title>Senior Platform Engineer (Web) | Performance · Automation · Reliability</title>
+  <meta name="description" content="Senior Platform/Web Engineer (12+ yrs) building and stabilizing revenue-critical web platforms through performance engineering, automation, measurement integrity, and large-scale site analysis." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://drenfest.github.io/gary-hunt-resume/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Senior Fullstack Product Engineer | Ownership · Scale · Velocity" />
-  <meta property="og:description" content="I build and stabilize customer-facing product workflows and backend systems—shipping measurable outcomes with performance discipline, automation, and end-to-end ownership." />
+  <meta property="og:title" content="Senior Platform Engineer (Web) | Performance · Automation · Reliability" />
+  <meta property="og:description" content="I build and stabilize revenue-critical web platforms—improving speed, reliability, and measurement integrity through performance engineering and automation." />
   <meta property="og:url" content="https://drenfest.github.io/gary-hunt-resume/" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Senior Fullstack Product Engineer | Ownership · Scale · Velocity" />
-  <meta name="twitter:description" content="Senior fullstack/product engineer (12+ yrs) focused on ownership, product polish, backend performance, and automation across JS/TS, Node, PHP, SvelteKit, and SQL." />
+  <meta name="twitter:title" content="Senior Platform Engineer (Web) | Performance · Automation · Reliability" />
+  <meta name="twitter:description" content="Senior hands-on platform/web engineer (12+ yrs) focused on performance, automation, reliability, and measurement integrity across PHP, Node.js, WordPress, and MySQL." />
 
   <meta name="theme-color" content="#05060a" />
 
@@ -87,6 +87,7 @@
 
     .resume-inner { position: relative; z-index: 1; }
 
+    /* HERO / HEADER */
     header.hero {
       display: grid;
       grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
@@ -121,7 +122,7 @@
       font-size: 0.95rem;
       color: var(--text-muted);
       line-height: 1.55;
-      max-width: 70ch;
+      max-width: 62ch;
     }
 
     .hero-bullets {
@@ -218,6 +219,16 @@
       font-weight: 700;
     }
 
+    /* Make URLs readable + PDF-friendly */
+    .contact-actions .btn {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      justify-content: flex-start;
+    }
+
     .contact-note {
       margin: 10px 0 0;
       font-size: 0.82rem;
@@ -225,6 +236,7 @@
       line-height: 1.5;
     }
 
+    /* SECTIONS */
     section.panel {
       margin-bottom: 18px;
       padding: 16px 18px 18px;
@@ -265,6 +277,7 @@
 
     .text + .text { margin-top: 10px; }
 
+    /* Expertise grid */
     .expertise-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -303,6 +316,7 @@
     .expertise-card li { margin-bottom: 4px; }
     .expertise-card li:last-child { margin-bottom: 0; }
 
+    /* Main grid */
     .main-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 2fr);
@@ -310,6 +324,7 @@
     }
     @media (max-width: 900px) { .main-grid { grid-template-columns: 1fr; } }
 
+    /* Skills */
     .skills-group { margin-bottom: 14px; }
     .skills-group:last-child { margin-bottom: 0; }
 
@@ -343,6 +358,7 @@
     .skill-pill .label { font-weight: 650; color: #e2e8f0; }
     .skill-pill .years { font-size: 0.74rem; color: var(--text-soft); font-family: var(--font-mono); }
 
+    /* Experience */
     .job {
       margin-bottom: 18px;
       padding-bottom: 12px;
@@ -394,6 +410,7 @@
 
     .job-tech strong { color: var(--accent); font-weight: 800; }
 
+    /* Education */
     .edu-item { font-size: 0.92rem; color: var(--text-muted); }
     .edu-item strong { color: #e2e8f0; }
 
@@ -404,12 +421,14 @@
       font-style: italic;
     }
 
+    /* Print */
     @media print {
       html, body {
         margin: 0 !important;
         padding: 0 !important;
         background: radial-gradient(circle at top, #17192b 0, #05060a 55%) !important;
         color: #f5f5f7 !important;
+
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
       }
@@ -422,7 +441,12 @@
         padding: 18px !important;
       }
 
-      .resume::before { display: block !important; opacity: 0.9 !important; }
+      .resume::before {
+        display: block !important;
+        opacity: 0.9 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
 
       section.panel,
       .contact-card,
@@ -434,13 +458,21 @@
         print-color-adjust: exact !important;
       }
 
-      a { color: #4fd1c5 !important; text-decoration: underline !important; }
+      a {
+        color: #4fd1c5 !important;
+        text-decoration: underline !important;
+      }
 
       .chip.primary {
         color: #4fd1c5 !important;
         border-color: rgba(79, 209, 197, 0.85) !important;
         background: rgba(79, 209, 197, 0.10) !important;
       }
+
+      /* IMPORTANT: Do NOT auto-append href in print,
+         because we are already rendering full URLs as visible text. */
+      a[href^="http"]::after { content: "" !important; }
+      a[href^="mailto:"]::after { content: "" !important; }
 
       @page { margin: 0.5in; }
     }
@@ -455,15 +487,15 @@
         "@type": "WebSite",
         "@id": "https://drenfest.github.io/gary-hunt-resume/#website",
         "url": "https://drenfest.github.io/gary-hunt-resume/",
-        "name": "Gary Hunt — Senior Fullstack Product Engineer | Ownership · Scale · Velocity",
+        "name": "Gary Hunt — Senior Platform Engineer (Web) | Performance · Automation · Reliability",
         "inLanguage": "en-US"
       },
       {
         "@type": "WebPage",
         "@id": "https://drenfest.github.io/gary-hunt-resume/#webpage",
         "url": "https://drenfest.github.io/gary-hunt-resume/",
-        "name": "Senior Fullstack Product Engineer | Ownership · Scale · Velocity",
-        "description": "Senior hands-on fullstack/product engineer focused on ownership, product polish, backend performance, and automation across JS/TS, Node.js, SvelteKit, and SQL.",
+        "name": "Senior Platform Engineer (Web) | Performance · Automation · Reliability",
+        "description": "Senior hands-on platform/web engineer focused on performance engineering, automation, reliability, and measurement integrity across PHP, Node.js, Svelte, and MySQL.",
         "isPartOf": { "@id": "https://drenfest.github.io/gary-hunt-resume/#website" },
         "about": { "@id": "https://drenfest.github.io/gary-hunt-resume/#person" },
         "inLanguage": "en-US"
@@ -473,26 +505,30 @@
         "@id": "https://drenfest.github.io/gary-hunt-resume/#person",
         "name": "Gary Hunt",
         "url": "https://drenfest.github.io/gary-hunt-resume/",
-        "jobTitle": "Senior Fullstack Product Engineer",
+        "jobTitle": "Senior Platform Engineer (Web)",
         "sameAs": [
           "https://www.linkedin.com/in/the-web-guy/",
           "https://github.com/drenfest"
         ],
         "knowsAbout": [
-          "Fullstack product engineering",
-          "Component-driven UI development",
-          "Platform performance optimization",
-          "Backend service design",
+          "Platform engineering",
+          "Web performance optimization",
+          "Platform reliability",
           "Automation engineering",
           "Internal tooling",
           "API integrations",
           "Instrumentation and analytics",
           "Data quality and measurement",
-          "Feature delivery and iteration",
-          "SQL schema design",
+          "Information retrieval",
+          "Semantic clustering",
+          "Topological content analysis",
+          "Vector similarity mapping",
+          "Technical SEO",
+          "Programmatic SEO",
+          "Schema markup",
+          "Crawl analysis",
           "PHP",
           "JavaScript",
-          "TypeScript",
           "Node.js",
           "Svelte",
           "SvelteKit",
@@ -503,8 +539,7 @@
           "DNS",
           "SSL/TLS",
           "GA4",
-          "Google Tag Manager",
-          "LLM-assisted development"
+          "Google Tag Manager"
         ]
       }
     ]
@@ -528,35 +563,41 @@
       <!-- HERO -->
       <header class="hero">
         <div class="hero-left">
-          <h1>Senior Fullstack Product Engineer | Ownership · Scale · Velocity</h1>
+          <h1>Senior Platform Engineer (Web) | Performance · Automation · Reliability</h1>
           <h2>Gary Hunt</h2>
 
           <p class="hero-subtitle">
-            I design, build, and ship customer-facing product workflows and backend systems—owning outcomes end-to-end.
-            My edge is combining fullstack delivery with performance discipline, automation, and measurement integrity so teams can move fast with confidence.
-            I’m strongest in ambiguous environments where the fastest path to value requires sharp debugging, pragmatic architecture, and durable execution.
+            I build and stabilize revenue-critical web platforms—improving speed, reliability, and measurement integrity so teams can ship confidently.
+            I’ve led performance and instrumentation fixes across complex CMS/ecommerce stacks, turning fragile systems into fast, dependable platforms with measurable impact.
           </p>
 
           <ul class="hero-bullets">
-            <li class="chip primary"><strong>Specialty:</strong> Fullstack Product Delivery (Ownership &amp; Scale)</li>
+            <li class="chip primary"><strong>Specialty:</strong> Revenue-Critical Web Platforms (Performance &amp; Reliability)</li>
             <li class="chip"><strong>Strength:</strong> Deep systems debugging + production-grade implementation</li>
-            <li class="chip"><strong>Focus:</strong> Product polish, backend performance, automation</li>
-            <li class="chip"><strong>Work:</strong> Remote (US) · Full-time / contract</li>
+            <li class="chip"><strong>Expertise:</strong> Automation, platform reliability, measurement integrity</li>
+            <li class="chip"><strong>Work:</strong> Remote (US) · Full-time / contract / fractional</li>
           </ul>
         </div>
 
         <div class="hero-right">
           <div class="contact-card">
             <div class="contact-title">Contact / Links</div>
+
+            <!-- UPDATED: URL text is the URL itself (PDF-safe) -->
             <div class="contact-actions">
-              <a class="btn primary" href="mailto:drenfest@gmail.com">Email drenfest@gmail.com</a>
-              <a class="btn" href="https://www.linkedin.com/in/the-web-guy/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a class="btn" href="https://github.com/drenfest" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="btn primary" href="mailto:drenfest@gmail.com">drenfest@gmail.com</a>
+              <a class="btn" href="https://www.linkedin.com/in/the-web-guy/" target="_blank" rel="noopener noreferrer">
+                https://www.linkedin.com/in/the-web-guy/
+              </a>
+              <a class="btn" href="https://github.com/drenfest" target="_blank" rel="noopener noreferrer">
+                https://github.com/drenfest
+              </a>
             </div>
+
             <p class="contact-note">
               Best entry point is LinkedIn or email.<br />
-              I’m strongest in senior fullstack product engineering, performance &amp; reliability work, workflow automation, and
-              durable integrations across complex stacks.
+              If you’re hiring: I’m strongest in senior hands-on platform engineering, platform reliability &amp; performance engineering, automation,
+              measurement integrity, and integrations across CMS/ecommerce stacks.
             </p>
           </div>
         </div>
@@ -569,73 +610,74 @@
           <div class="panel-bar"></div>
         </div>
         <p class="text">
-          Senior Fullstack Engineer with <strong>12+ years</strong> building and stabilizing production web systems and product experiences.
-          I’ve shipped fullstack features across complex ecosystems (CMS, ecommerce, analytics, internal tools), then hardened them for real-world scale:
-          performance, reliability, instrumentation, and operational clarity.
+          Senior Platform/Web Engineer with <strong>12+ years</strong> building and stabilizing revenue-critical web systems.
+          I lead reliability, performance, and measurement integrity work when platforms are slow, unstable, mis-instrumented, or failing to produce reliable outcomes —
+          then ship durable fixes that make systems fast, dependable, and measurable.
         </p>
         <p class="text">
-          I work like an owner: clarify the goal, find the bottleneck, ship the smallest durable fix, verify the outcome, and iterate.
-          Teams trust me when systems are messy, metrics are unreliable, or “simple” features hide deep platform complexity.
+          My edge is the combination: application engineering + automation + measurement discipline + performance engineering.
+          In discovery-heavy environments (catalogs, large page inventories), that translates into fewer production surprises,
+          trustworthy analytics, and durable systems teams can operate.
         </p>
       </section>
 
       <!-- EXPERTISE -->
       <section class="panel" id="expertise">
         <div class="panel-head">
-          <h3>What I Build</h3>
+          <h3>What I Build / Fix</h3>
           <div class="panel-bar"></div>
         </div>
 
         <div class="expertise-grid">
           <div class="expertise-card">
-            <h4>Product Workflows (Frontend + Backend)</h4>
+            <h4>Automation &amp; Internal Tools</h4>
             <p>
-              Build and iterate on product-facing workflows with strong UX discipline and reliable backend behavior.
-              Component-driven UI + pragmatic backend services so features stay shippable as complexity grows.
+              Build automation that replaces repetitive manual work and makes problems measurable:
+              scanners, rule engines, pipelines, dashboards, and operational tooling teams actually trust and use.
             </p>
             <ul>
-              <li>Component-driven UI (SvelteKit; transferable to React/Ember)</li>
-              <li>APIs, background jobs, durable integrations</li>
-              <li>Instrumentation aligned to real user behavior</li>
+              <li>Crawlers, checkers, scoring engines, and prioritization queues</li>
+              <li>Workflow automation (CRON, webhooks, normalization, enrichment)</li>
+              <li>Dashboards for visibility, triage, and ROI-based decisioning</li>
             </ul>
           </div>
 
           <div class="expertise-card">
-            <h4>Scale, Performance &amp; Reliability</h4>
+            <h4>Performance &amp; Reliability</h4>
             <p>
-              Make systems fast and dependable under load by fixing root causes across code, data, caching, and infrastructure.
-              Prefer durable improvements over short-term patches.
+              Root-cause remediation across code, plugins, caching, hosting, DNS, and analytics —
+              engineered to restore speed, stability, and long-term maintainability (not bandaids).
             </p>
             <ul>
               <li>Core Web Vitals / Lighthouse improvements (40–60 → 90+ patterns)</li>
-              <li>Query/index tuning, caching, edge optimization</li>
-              <li>Regression prevention via verification workflows</li>
+              <li>Framework + plugin contention debugging and stabilization</li>
+              <li>Server + edge tuning (headers, compression, caching, routing)</li>
             </ul>
           </div>
 
           <div class="expertise-card">
-            <h4>Automation &amp; Internal Tooling</h4>
+            <h4>Full-Stack Engineering &amp; Integrations</h4>
             <p>
-              Replace manual work with systems: pipelines, rule engines, scanners, dashboards, and queues that improve throughput
-              and make decisions easier.
+              Engineer systems and integrations across PHP, Node.js, and MySQL — connecting CMS/ecommerce,
+              analytics, CRMs, and APIs with durable automation so ops doesn’t rely on tribal knowledge.
             </p>
             <ul>
-              <li>Scoring engines, prioritization queues, workflow automation</li>
-              <li>Normalization/enrichment pipelines (cron + webhooks)</li>
-              <li>Dashboards for triage, trends, and anomaly detection</li>
+              <li>REST APIs, webhooks, background jobs, data services</li>
+              <li>Schema design, query/index optimization, performance tuning</li>
+              <li>Backend tools + admin panels for operational clarity</li>
             </ul>
           </div>
 
           <div class="expertise-card">
-            <h4>AI/LLM-Assisted Delivery</h4>
+            <h4>Measurement &amp; Data Integrity</h4>
             <p>
-              Use AI tools to increase velocity and reduce risk: rapid prototyping, test generation, refactors, and verification workflows—
-              while keeping engineering judgment in the driver’s seat.
+              Implement instrumentation and verification aligned to reality —
+              clean tagging, reliable event models, regression monitoring, and reporting built for decisions (not vanity metrics).
             </p>
             <ul>
-              <li>LLM-assisted scaffolding, refactors, and troubleshooting</li>
-              <li>Fast iteration loops with human verification</li>
-              <li>Automation opportunities discovered via “pain audits”</li>
+              <li>GA4 / GTM implementation + verification</li>
+              <li>Event models aligned to actual user behavior and business outcomes</li>
+              <li>Monitoring to catch breakage fast and prevent silent data loss</li>
             </ul>
           </div>
         </div>
@@ -654,50 +696,54 @@
           <div class="skills-group">
             <div class="skills-heading">Languages &amp; Runtime</div>
             <div class="skills-list">
-              <div class="skill-pill"><span class="label">JavaScript</span><span class="years">12+ yrs</span></div>
-              <div class="skill-pill"><span class="label">TypeScript</span><span class="years">advanced</span></div>
-              <div class="skill-pill"><span class="label">Node.js</span><span class="years">11+ yrs</span></div>
               <div class="skill-pill"><span class="label">PHP</span><span class="years">12+ yrs</span></div>
+              <div class="skill-pill"><span class="label">JavaScript</span><span class="years">12+ yrs</span></div>
+              <div class="skill-pill"><span class="label">Node.js</span><span class="years">11+ yrs</span></div>
               <div class="skill-pill"><span class="label">Bash</span><span class="years">10+ yrs</span></div>
               <div class="skill-pill"><span class="label">HTML5</span><span class="years">12+ yrs</span></div>
               <div class="skill-pill"><span class="label">CSS3</span><span class="years">12+ yrs</span></div>
-            </div>
-          </div>
-
-          <div class="skills-group">
-            <div class="skills-heading">Frontend</div>
-            <div class="skills-list">
               <div class="skill-pill"><span class="label">Svelte / SvelteKit</span><span class="years">9+ yrs</span></div>
-              <div class="skill-pill"><span class="label">Component-driven UI</span><span class="years">10+ yrs</span></div>
-              <div class="skill-pill"><span class="label">Accessibility + UX patterns</span><span class="years">strong</span></div>
             </div>
           </div>
 
           <div class="skills-group">
             <div class="skills-heading">Backend, Data &amp; APIs</div>
             <div class="skills-list">
-              <div class="skill-pill"><span class="label">SQL (MySQL)</span><span class="years">12+ yrs</span></div>
+              <div class="skill-pill"><span class="label">MySQL</span><span class="years">12+ yrs</span></div>
               <div class="skill-pill"><span class="label">Schema Design</span><span class="years">11+ yrs</span></div>
               <div class="skill-pill"><span class="label">Query Optimization</span><span class="years">11+ yrs</span></div>
               <div class="skill-pill"><span class="label">Indexing &amp; Performance</span><span class="years">10+ yrs</span></div>
               <div class="skill-pill"><span class="label">REST APIs</span><span class="years">11+ yrs</span></div>
-              <div class="skill-pill"><span class="label">Background Jobs / Cron</span><span class="years">10+ yrs</span></div>
+              <div class="skill-pill"><span class="label">Cron Automation</span><span class="years">10+ yrs</span></div>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-heading">Platforms</div>
+            <div class="skills-list">
+              <div class="skill-pill"><span class="label">WordPress</span><span class="years">11+ yrs</span></div>
+              <div class="skill-pill"><span class="label">Shopify</span><span class="years">10+ yrs</span></div>
+              <div class="skill-pill"><span class="label">BigCommerce</span><span class="years">10+ yrs</span></div>
+              <div class="skill-pill"><span class="label">WooCommerce</span><span class="years">10+ yrs</span></div>
+              <div class="skill-pill"><span class="label">Custom CMS</span><span class="years">11+ yrs</span></div>
             </div>
           </div>
 
           <div class="skills-group">
             <div class="skills-heading">Infrastructure &amp; Delivery</div>
             <div class="skills-list">
-              <div class="skill-pill"><span class="label">Linux</span><span class="years">11+ yrs</span></div>
-              <div class="skill-pill"><span class="label">Nginx / Apache</span><span class="years">9–11+ yrs</span></div>
+              <div class="skill-pill"><span class="label">Linux Admin</span><span class="years">11+ yrs</span></div>
+              <div class="skill-pill"><span class="label">Apache</span><span class="years">11+ yrs</span></div>
+              <div class="skill-pill"><span class="label">Nginx</span><span class="years">9+ yrs</span></div>
               <div class="skill-pill"><span class="label">Cloudflare</span><span class="years">10+ yrs</span></div>
               <div class="skill-pill"><span class="label">DNS</span><span class="years">11+ yrs</span></div>
               <div class="skill-pill"><span class="label">SSL/TLS</span><span class="years">11+ yrs</span></div>
+              <div class="skill-pill"><span class="label">Security Hardening</span><span class="years">10+ yrs</span></div>
             </div>
           </div>
 
           <div class="skills-group">
-            <div class="skills-heading">Measurement</div>
+            <div class="skills-heading">Measurement &amp; Observability</div>
             <div class="skills-list">
               <div class="skill-pill"><span class="label">GA4</span><span class="years">12+ yrs</span></div>
               <div class="skill-pill"><span class="label">Google Tag Manager</span><span class="years">12+ yrs</span></div>
@@ -706,12 +752,24 @@
           </div>
 
           <div class="skills-group">
+            <div class="skills-heading">Search &amp; Discovery (Domain)</div>
+            <div class="skills-list">
+              <div class="skill-pill"><span class="label">Technical SEO</span><span class="years">12+ yrs</span></div>
+              <div class="skill-pill"><span class="label">Programmatic SEO</span><span class="years">10+ yrs</span></div>
+              <div class="skill-pill"><span class="label">Schema Markup</span><span class="years">10+ yrs</span></div>
+              <div class="skill-pill"><span class="label">Crawl Analysis</span><span class="years">10+ yrs</span></div>
+            </div>
+          </div>
+
+          <div class="skills-group">
             <div class="skills-heading">Tooling</div>
             <div class="skills-list">
               <div class="skill-pill"><span class="label">Git / GitHub</span><span class="years">11+ yrs</span></div>
+              <div class="skill-pill"><span class="label">Composer</span><span class="years">10+ yrs</span></div>
+              <div class="skill-pill"><span class="label">Webpack</span><span class="years">9+ yrs</span></div>
+              <div class="skill-pill"><span class="label">Vite</span><span class="years">6+ yrs</span></div>
               <div class="skill-pill"><span class="label">Postman</span><span class="years">10+ yrs</span></div>
               <div class="skill-pill"><span class="label">Lighthouse</span><span class="years">10+ yrs</span></div>
-              <div class="skill-pill"><span class="label">Vite</span><span class="years">6+ yrs</span></div>
             </div>
           </div>
         </aside>
@@ -727,7 +785,7 @@
           <article class="job">
             <div class="job-header">
               <div>
-                <p class="job-role">Senior Platform Engineer (Web) — Product Delivery &amp; Reliability</p>
+                <p class="job-role">Senior Platform Engineer (Web)</p>
                 <p class="job-meta">Cain &amp; Company</p>
               </div>
               <div class="job-dates">Apr 2025 – Nov 2025</div>
@@ -735,22 +793,24 @@
 
             <div class="job-subhead">Impact Highlights</div>
             <ul>
-              <li>Owned end-to-end delivery of performance and reliability work across enterprise WordPress ecosystems, improving Lighthouse from ~40–60 → <strong>90+</strong> across major properties.</li>
-              <li>Diagnosed systemic production failures across PHP, MySQL, DNS, caching, plugin/theme contention, and hosting—then shipped durable fixes and verification workflows to prevent regressions.</li>
-              <li>Built automated audits to prioritize work across <strong>multi-thousand URL inventories</strong>, turning ambiguous problem sets into clear, shippable queues.</li>
-              <li>Improved instrumentation integrity (GTM/GA4), aligning tracking to real behavior and ensuring decisions were based on trustworthy data.</li>
+              <li>Led stabilization and re-architecture of enterprise WordPress ecosystems, raising Lighthouse scores from ~40–60 → <strong>90+ across major client sites</strong>.</li>
+              <li>Diagnosed systemic failures across PHP, MySQL, DNS, caching, plugin conflicts, theme frameworks, and hosting environments — then shipped durable fixes.</li>
+              <li>Drove prioritization across <strong>multi-thousand URL inventories</strong> using automated audits and scoring (performance + discovery signals).</li>
+              <li>Stabilized performance and measurement across <strong>multiple enterprise WordPress properties</strong>, reducing regressions through repeatable verification workflows.</li>
             </ul>
 
-            <div class="job-subhead">Internal Tooling (Decisioning + Velocity)</div>
+            <div class="job-subhead">Internal Tooling / Scoring System</div>
             <ul>
-              <li>Built a similarity + clustering pipeline (Node.js + PHP) to model page relationships and identify workflow/content clusters across large inventories.</li>
-              <li>Designed a weighted scoring engine combining performance signals, crawl output deltas, and internal link flow to prioritize work based on impact.</li>
-              <li>Developed dashboards for trends, anomaly detection, and prioritized work queues—reducing manual analysis by <strong>hours per client</strong> and enabling faster iteration.</li>
+              <li>Built a similarity + clustering pipeline (Node.js + PHP) to model page relationships and identify content/intent clusters across large inventories.</li>
+              <li>Executed <strong>Topological Content Analysis</strong> and <strong>Vector Similarity Mapping</strong> to reveal cluster structure and internal link flow opportunities at scale.</li>
+              <li>Designed a weighted scoring engine combining performance signals, crawl output, deltas, and internal link flow to prioritize work based on impact.</li>
+              <li>Automated diagnostics, reducing manual analysis by <strong>hours per client</strong> while replacing multiple commercial tools with a single system.</li>
+              <li>Developed dashboards showing trends, anomaly detection, cluster scoring, and prioritized work queues to keep teams aligned and execution-focused.</li>
             </ul>
 
             <div class="job-tech">
               <strong>Skills Used / Tech Stack:</strong>
-              JavaScript/TypeScript, Node.js, PHP, Svelte/SvelteKit, WordPress, SQL (MySQL), Lighthouse, GTM/GA4, Git, Cloudflare, DNS, server optimization, internal tooling
+              PHP, JavaScript, Node.js, WordPress, MySQL, Svelte, Lighthouse, GA4, Google Tag Manager, Git, Cloudflare, DNS, server optimization, internal tooling
             </div>
           </article>
 
@@ -766,15 +826,15 @@
 
             <div class="job-subhead">Impact Highlights</div>
             <ul>
-              <li>Owned fullstack systems and integrations across CRMs, analytics, CMS, and ecommerce—delivering features and operational tooling that improved throughput and reduced support burden.</li>
-              <li>Engineered automation that reduced recurring reporting/auditing workloads by <strong>80–90%</strong> via pipelines, normalization, and verification workflows.</li>
-              <li>Built and stabilized API/webhook integrations and background jobs to eliminate manual work and prevent silent failures.</li>
-              <li>Delivered measurement implementations with regression checks to ensure product and marketing decisions were backed by reliable event models.</li>
+              <li>Served as integration and systems SME, building and maintaining full-stack systems across CRMs, analytics, CMS, and ecommerce platforms.</li>
+              <li>Engineered automation that reduced recurring reporting/auditing workloads by <strong>80–90%</strong>, freeing teams from repetitive operational drag.</li>
+              <li>Delivered durable measurement implementations (GTM/GA4) with verification workflows to prevent silent breakage and data integrity issues.</li>
+              <li>Supported discovery and growth initiatives when needed by improving crawlability, content structure, and measurement integrity across large inventories.</li>
             </ul>
 
             <div class="job-tech">
               <strong>Skills Used / Tech Stack:</strong>
-              JavaScript/TypeScript, Node.js, PHP, WordPress, Shopify, BigCommerce, SQL (MySQL), APIs/webhooks, background jobs, GTM/GA4, Linux, DNS, SSL/TLS, Bash automation
+              PHP, JavaScript, Node.js, WordPress, Shopify, BigCommerce, MySQL, GTM, GA4, Linux administration, DNS, SSL/TLS, API integrations, Bash automation
             </div>
           </article>
 
@@ -790,14 +850,15 @@
 
             <div class="job-subhead">Impact Highlights</div>
             <ul>
-              <li>Built and maintained production web systems with an emphasis on uptime, performance, and maintainable delivery under real-world constraints.</li>
-              <li>Owned Linux operations: SSL, security hardening, backups, and database optimization to keep systems stable and recoverable.</li>
-              <li>Created internal automation scripts to reduce recurring ops workload and improve reliability.</li>
+              <li>Engineered CMS modules and platform features for service-based businesses with emphasis on stability and maintainable delivery.</li>
+              <li>Owned Linux server operations including SSL, security, backups, and database optimization to ensure platform reliability.</li>
+              <li>Built internal automation scripts to streamline recurring operational tasks and reduce manual overhead.</li>
+              <li>Supported performance tuning and reliability improvements across multiple deployments under real-world constraints.</li>
             </ul>
 
             <div class="job-tech">
               <strong>Skills Used / Tech Stack:</strong>
-              WordPress, Shopify, BigCommerce, PHP, Node.js, SQL (MySQL), Linux, Apache, DNS, SSL/TLS, schema design, performance tuning
+              WordPress, Shopify, BigCommerce, PHP, Node.js, MySQL, Linux administration, Apache, DNS, SSL, schema design, performance tuning
             </div>
           </article>
 
@@ -813,34 +874,74 @@
 
             <div class="job-subhead">Highlights</div>
             <ul>
-              <li>Built responsive, production-ready websites and custom CMS solutions using PHP, JavaScript, HTML/CSS, and SQL with strong delivery discipline.</li>
-              <li>Improved performance and backend configuration across hosting environments through practical tuning and debugging.</li>
+              <li>Built responsive websites and custom CMS solutions using PHP, JavaScript, HTML/CSS, and MySQL with a focus on production-ready delivery.</li>
+              <li>Improved site speed and backend configuration across hosting environments through practical tuning and implementation discipline.</li>
+              <li>Delivered discoverability improvements when needed, alongside core engineering delivery and platform maintenance.</li>
             </ul>
 
             <div class="job-tech">
               <strong>Skills Used / Tech Stack:</strong>
-              PHP, JavaScript, SQL (MySQL), HTML, CSS, analytics instrumentation, cPanel/WHM, responsive UI development
+              PHP, JavaScript, MySQL, HTML, CSS, Google Analytics, Google Tag Manager, cPanel/WHM, responsive design
             </div>
           </article>
 
-          <!-- Earlier roles (compressed) -->
+          <!-- Sawsall Tree Removal -->
           <article class="job">
             <div class="job-header">
               <div>
-                <p class="job-role">Earlier Experience</p>
-                <p class="job-meta">Operations, Technical Leadership, Safety &amp; Team Delivery</p>
+                <p class="job-role">Entrepreneur · Lead Operator</p>
+                <p class="job-meta">Sawsall Tree Removal</p>
               </div>
-              <div class="job-dates">2008 – 2014</div>
+              <div class="job-dates">Apr 2013 – Oct 2014</div>
             </div>
 
             <div class="job-subhead">Highlights</div>
             <ul>
-              <li>Owned real-world operations under constraints (scheduling, safety, customer experience), building strong execution discipline and end-to-end accountability.</li>
-              <li>Technical diagnostics and team leadership in production environments (quality, throughput, training).</li>
+              <li>Owned operations, scheduling, safety, customer experience, and jobsite execution under tight timelines and real-world risk.</li>
             </ul>
 
             <div class="job-tech">
-              <strong>Skills Used:</strong> Ownership, execution under constraints, diagnostics, communication, team leadership
+              <strong>Skills Used:</strong> Scheduling, operations management, safety compliance, client communication
+            </div>
+          </article>
+
+          <!-- Fiat Chrysler -->
+          <article class="job">
+            <div class="job-header">
+              <div>
+                <p class="job-role">Repair Technician · Team Lead</p>
+                <p class="job-meta">Fiat Chrysler Automobiles</p>
+              </div>
+              <div class="job-dates">Jan 2011 – Nov 2013</div>
+            </div>
+
+            <div class="job-subhead">Highlights</div>
+            <ul>
+              <li>Performed diagnostics, electrical assembly, soldering, QA, and trained new team members to maintain quality and throughput.</li>
+            </ul>
+
+            <div class="job-tech">
+              <strong>Skills Used:</strong> Diagnostics, electrical assembly, soldering, quality assurance, process documentation, team leadership
+            </div>
+          </article>
+
+          <!-- Top to Bottom Tree Service -->
+          <article class="job">
+            <div class="job-header">
+              <div>
+                <p class="job-role">Groundsman · Climber</p>
+                <p class="job-meta">Top to Bottom Tree Service</p>
+              </div>
+              <div class="job-dates">Jun 2008 – Oct 2010</div>
+            </div>
+
+            <div class="job-subhead">Highlights</div>
+            <ul>
+              <li>Executed rigging and climbing operations with strict safety discipline and coordinated crew execution in high-risk environments.</li>
+            </ul>
+
+            <div class="job-tech">
+              <strong>Skills Used:</strong> Rigging, chainsaw operation, climbing equipment, safety procedures, teamwork
             </div>
           </article>
 
