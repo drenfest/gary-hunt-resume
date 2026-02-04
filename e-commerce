@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Senior Ecommerce Platform Engineer | Migrations · Integrations · Performance</title>
+  <meta name="description" content="Senior Platform Engineer specializing in complex ecommerce migrations (WooCommerce to Shopify), API integrations (JobNimbus), and rescuing failed platform transitions." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://drenfest.github.io/gary-hunt-resume/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Senior Ecommerce Platform Engineer | Migrations · Integrations · Performance" />
+  <meta property="og:description" content="Specialist in complex data migrations, API integrations, and stabilizing revenue-critical ecommerce platforms." />
+  <meta property="og:url" content="https://drenfest.github.io/gary-hunt-resume/" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Senior Ecommerce Platform Engineer | Migrations · Integrations" />
+  <meta name="twitter:description" content="Specialist in complex data migrations, API integrations, and stabilizing revenue-critical ecommerce platforms." />
+
+  <meta name="theme-color" content="#05060a" />
+
+  <style>
+    :root {
+      --bg-main: #05060a;
+      --bg-card: #0b0d15;
+      --bg-chip: #151824;
+      --border-subtle: #202332;
+      --accent: #4fd1c5;
+      --accent-soft: rgba(79, 209, 197, 0.12);
+      --text-main: #f5f5f7;
+      --text-muted: #a0aec0;
+      --text-soft: #7c8699;
+      --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.9);
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-mono: "JetBrains Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top, #17192b 0, #05060a 55%);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+    }
+
+    body {
+      padding: 32px 16px;
+      display: flex;
+      justify-content: center;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .resume {
+      width: 100%;
+      max-width: 1100px;
+      background: linear-gradient(135deg, #070814 0, #05060a 50%, #040509 100%);
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 32px 32px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .resume::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0 0, rgba(79, 209, 197, 0.08) 0, transparent 50%),
+        radial-gradient(circle at 100% 0, rgba(129, 140, 248, 0.07) 0, transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .resume-inner { position: relative; z-index: 1; }
+
+    /* HERO / HEADER */
+    header.hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 18px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 22px;
+      margin-bottom: 22px;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      header.hero { grid-template-columns: 1fr; }
+    }
+
+    .hero-left h1 {
+      margin: 0;
+      font-size: 1.95rem;
+      letter-spacing: 0.01em;
+      line-height: 1.15;
+    }
+
+    .hero-left h2 {
+      margin: 10px 0 0;
+      font-size: 1.05rem;
+      font-weight: 650;
+      letter-spacing: 0.02em;
+      color: #e2e8f0;
+    }
+
+    .hero-subtitle {
+      margin: 10px 0 0;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      max-width: 62ch;
+    }
+
+    .hero-bullets {
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-chip);
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 6px 12px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .chip strong { color: #e2e8f0; font-weight: 650; }
+    .chip.primary {
+      border-color: rgba(79, 209, 197, 0.8);
+      background: linear-gradient(135deg, #0f172a, #0b1618);
+      color: var(--accent);
+      font-weight: 650;
+    }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-end;
+    }
+
+    @media (max-width: 900px) {
+      .hero-right { align-items: flex-start; }
+    }
+
+    .contact-card {
+      width: 100%;
+      background: rgba(8, 10, 18, 0.9);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 14px 14px 12px;
+    }
+
+    .contact-title {
+      margin: 0 0 10px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      background: rgba(15, 23, 42, 0.75);
+      color: #e2e8f0;
+      font-size: 0.88rem;
+      line-height: 1;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(79, 209, 197, 0.65);
+      background: rgba(15, 23, 42, 0.9);
+      text-decoration: none;
+    }
+
+    .btn.primary {
+      border-color: rgba(79, 209, 197, 0.85);
+      background: rgba(79, 209, 197, 0.10);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .contact-actions .btn {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      justify-content: flex-start;
+    }
+
+    .contact-note {
+      margin: 10px 0 0;
+      font-size: 0.82rem;
+      color: var(--text-soft);
+      line-height: 1.5;
+    }
+
+    /* SECTIONS */
+    section.panel {
+      margin-bottom: 18px;
+      padding: 16px 18px 18px;
+      border-radius: var(--radius-lg);
+      background: rgba(8, 10, 18, 0.9);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .panel-head h3 {
+      margin: 0;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--text-soft);
+    }
+
+    .panel-bar {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(79, 209, 197, 0.5), transparent);
+      opacity: 0.7;
+    }
+
+    .text {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.62;
+      margin: 0;
+    }
+
+    .text + .text { margin-top: 10px; }
+
+    /* Expertise grid */
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    @media (max-width: 900px) { .expertise-grid { grid-template-columns: 1fr; } }
+
+    .expertise-card {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      border-radius: 14px;
+      padding: 12px 12px 10px;
+    }
+
+    .expertise-card h4 {
+      margin: 0 0 6px;
+      font-size: 0.95rem;
+      color: #e2e8f0;
+    }
+
+    .expertise-card p {
+      margin: 0 0 8px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+
+    .expertise-card ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+
+    .expertise-card li { margin-bottom: 4px; }
+    .expertise-card li:last-child { margin-bottom: 0; }
+
+    /* Main grid */
+    .main-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 2fr);
+      gap: 18px;
+    }
+    @media (max-width: 900px) { .main-grid { grid-template-columns: 1fr; } }
+
+    /* Skills */
+    .skills-group { margin-bottom: 14px; }
+    .skills-group:last-child { margin-bottom: 0; }
+
+    .skills-heading {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin: 0 0 8px;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 0.82rem;
+    }
+
+    .skill-pill {
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 5px 10px;
+      color: var(--text-muted);
+      display: inline-flex;
+      gap: 6px;
+      align-items: baseline;
+      line-height: 1.2;
+    }
+
+    .skill-pill .label { font-weight: 650; color: #e2e8f0; }
+    .skill-pill .years { font-size: 0.74rem; color: var(--text-soft); font-family: var(--font-mono); }
+
+    /* Experience */
+    .job {
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed rgba(51, 65, 85, 0.7);
+    }
+    .job:last-of-type { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+      align-items: baseline;
+    }
+
+    .job-role { font-size: 0.98rem; font-weight: 800; color: #e2e8f0; margin: 0; }
+    .job-meta { color: var(--text-soft); font-size: 0.86rem; margin: 2px 0 0; }
+    .job-dates { font-size: 0.82rem; color: var(--text-soft); font-family: var(--font-mono); white-space: nowrap; }
+
+    .job-subhead {
+      margin: 10px 0 6px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-soft);
+    }
+
+    .job ul {
+      padding-left: 18px;
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .job ul li { margin-bottom: 6px; }
+    .job ul li:last-child { margin-bottom: 0; }
+
+    .job-tech {
+      margin-top: 10px;
+      font-size: 0.82rem;
+      color: var(--text-soft);
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 12px;
+      padding: 8px 10px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    .job-tech strong { color: var(--accent); font-weight: 800; }
+
+    /* Education */
+    .edu-item { font-size: 0.92rem; color: var(--text-muted); }
+    .edu-item strong { color: #e2e8f0; }
+
+    .footer-note {
+      margin-top: 8px;
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      font-style: italic;
+    }
+
+    /* Print */
+    @media print {
+      html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: radial-gradient(circle at top, #17192b 0, #05060a 55%) !important;
+        color: #f5f5f7 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .resume {
+        background: linear-gradient(135deg, #070814 0, #05060a 50%, #040509 100%) !important;
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        box-shadow: none !important;
+        padding: 18px !important;
+      }
+      .resume::before {
+        display: block !important;
+        opacity: 0.9 !important;
+      }
+      section.panel, .contact-card, .expertise-card, .job-tech {
+        background: rgba(8, 10, 18, 0.9) !important;
+        border-color: rgba(255, 255, 255, 0.10) !important;
+      }
+      a { color: #4fd1c5 !important; }
+      .chip.primary {
+        color: #4fd1c5 !important;
+        border-color: rgba(79, 209, 197, 0.85) !important;
+        background: rgba(79, 209, 197, 0.10) !important;
+      }
+      a[href^="http"]::after { content: "" !important; }
+      a[href^="mailto:"]::after { content: "" !important; }
+      @page { margin: 0.5in; }
+    }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S2VKXB0D3S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S2VKXB0D3S');
+  </script>
+</head>
+
+<body>
+  <main class="resume">
+    <div class="resume-inner">
+
+      <header class="hero">
+        <div class="hero-left">
+          <h1>Senior Ecommerce Engineer | Migrations · Integrations · Performance</h1>
+          <h2>Gary Hunt</h2>
+
+          <p class="hero-subtitle">
+            I specialize in complex platform migrations (WooCommerce → Shopify) and custom integrations. I rescue failed transitions, stabilize data, and engineer connections between ecommerce and operational systems (CRM, ERP) to ensure data integrity and speed.
+          </p>
+
+          <ul class="hero-bullets">
+            <li class="chip primary"><strong>Focus:</strong> Migrations (WooCommerce/Shopify) &amp; API Integrations</li>
+            <li class="chip"><strong>Strength:</strong> Rescuing failed migrations + Data Remediation</li>
+            <li class="chip"><strong>Expertise:</strong> Full-stack PHP/Node.js, JobNimbus, GA4</li>
+          </ul>
+        </div>
+
+        <div class="hero-right">
+          <div class="contact-card">
+            <div class="contact-title">Contact / Links</div>
+            <div class="contact-actions">
+              <a class="btn primary" href="mailto:drenfest@gmail.com">drenfest@gmail.com</a>
+              <a class="btn" href="https://www.linkedin.com/in/the-web-guy/" target="_blank" rel="noopener noreferrer">
+                https://www.linkedin.com/in/the-web-guy/
+              </a>
+              <a class="btn" href="https://github.com/drenfest" target="_blank" rel="noopener noreferrer">
+                https://github.com/drenfest
+              </a>
+            </div>
+            <p class="contact-note">
+              Hiring for: Complex migrations, rescue projects, API middleware, and platform stabilization.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <section class="panel" id="summary">
+        <div class="panel-head">
+          <h3>Summary</h3>
+          <div class="panel-bar"></div>
+        </div>
+        <p class="text">
+          Senior Platform Engineer with <strong>12+ years</strong> experience executing high-risk migrations and integrations. I bridge the gap between "standard" platform features and complex business requirements by building custom middleware, data verification scripts, and automated syncs.
+        </p>
+        <p class="text">
+          My expertise lies in entering post-failure environments—where a migration has stalled or data is corrupted—and engineering a clean path forward. I have successfully migrated industrial catalogs and D2C brands to Shopify and integrated construction management software (JobNimbus) with WooCommerce to automate revenue operations.
+        </p>
+      </section>
+
+      <section class="panel" id="expertise">
+        <div class="panel-head">
+          <h3>Expertise: Migrations &amp; Integrations</h3>
+          <div class="panel-bar"></div>
+        </div>
+
+        <div class="expertise-grid">
+          <div class="expertise-card">
+            <h4>Migrations &amp; Replatforming</h4>
+            <p>
+              End-to-end management of complex moves (WooCommerce to Shopify), handling schema mapping, URL redirects, and data integrity.
+            </p>
+            <ul>
+              <li><strong>Rescue Operations:</strong> Fixing failed migrations and corrupted data.</li>
+              <li><strong>Catalog Transfer:</strong> Handling complex attributes and variants.</li>
+              <li><strong>Zero-Downtime:</strong> Cutover planning and DNS management.</li>
+            </ul>
+          </div>
+
+          <div class="expertise-card">
+            <h4>API Integrations &amp; Middleware</h4>
+            <p>
+              Connecting disconnected systems (CRM, ERP, Ecommerce) via custom Node.js/PHP middleware and webhooks.
+            </p>
+            <ul>
+              <li><strong>JobNimbus + Woo:</strong> Bidirectional customer/order sync.</li>
+              <li><strong>Custom Logic:</strong> Transforming data payloads between APIs.</li>
+              <li><strong>Error Handling:</strong> Building retry queues for API failures.</li>
+            </ul>
+          </div>
+
+          <div class="expertise-card">
+            <h4>Performance Engineering</h4>
+            <p>
+              Ensuring the new platform is faster than the old one. Tuning headers, caching, and asset delivery.
+            </p>
+            <ul>
+              <li><strong>Lighthouse:</strong> 40–60 → 90+ optimization patterns.</li>
+              <li><strong>Server Tuning:</strong> Nginx/Apache and Database indexing.</li>
+              <li><strong>Script Auditing:</strong> Removing bloat from 3rd party tags.</li>
+            </ul>
+          </div>
+
+          <div class="expertise-card">
+            <h4>Data Integrity &amp; Analytics</h4>
+            <p>
+              Ensuring that revenue numbers match across systems post-migration using GA4 and GTM.
+            </p>
+            <ul>
+              <li><strong>GTM/GA4:</strong> Clean event tracking and purchase verification.</li>
+              <li><strong>Migration Audits:</strong> Automated crawlers to verify URL mapping.</li>
+              <li><strong>Regression Testing:</strong> Monitoring for silent data loss.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="main-grid">
+
+        <aside class="panel" id="skills">
+          <div class="panel-head">
+            <h3>Technical Skills</h3>
+            <div class="panel-bar"></div>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-heading">Platforms &amp; APIs</div>
+            <div class="skills-list">
+              <div class="skill-pill"><span class="label">WooCommerce</span><span class="years">10+ yrs</span></div>
+              <div class="skill-pill"><span class="label">Shopify</span><span class="years">10+ yrs</span></div>
+              <div class="skill-pill"><span class="label">JobNimbus API</span><span class="years">Integrations</span></div>
+              <div class="skill-pill"><span class="label">BigCommerce</span><span class="years">10+ yrs</span></div>
+              <div class="skill-pill"><span class="label">WordPress</span><span class="years">11+ yrs</span></div>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-heading">Languages &amp; Backend</div>
+            <div class="skills-list">
+              <div class="skill-pill"><span class="label">PHP</span><span class="years">12+ yrs</span></div>
+              <div class="skill-pill"><span class="label">Node.js</span><span class="years">11+ yrs</span></div>
+              <div class="skill-pill"><span class="label">JavaScript</span><span class="years">12+ yrs</span></div>
+              <div class="skill-pill"><span class="label">MySQL</span><span class="years">12+ yrs</span></div>
+              <div class="skill-pill"><span class="label">Bash Scripting</span><span class="years">10+ yrs</span></div>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-heading">Infrastructure &amp; Tools</div>
+            <div class="skills-list">
+              <div class="skill-pill"><span class="label">Linux / Shell</span><span class="years">11+ yrs</span></div>
+              <div class="skill-pill"><span class="label">DNS / SSL</span><span class="years">11+ yrs</span></div>
+              <div class="skill-pill"><span class="label">Git / Versioning</span><span class="years">11+ yrs</span></div>
+              <div class="skill-pill"><span class="label">Postman</span><span class="years">API Testing</span></div>
+              <div class="skill-pill"><span class="label">GTM / GA4</span><span class="years">12+ yrs</span></div>
+            </div>
+          </div>
+        </aside>
+
+        <section class="panel" id="experience">
+          <div class="panel-head">
+            <h3>Professional Experience</h3>
+            <div class="panel-bar"></div>
+          </div>
+
+          <article class="job">
+            <div class="job-header">
+              <div>
+                <p class="job-role">Senior Platform Engineer (Web)</p>
+                <p class="job-meta">Cain &amp; Company</p>
+              </div>
+              <div class="job-dates">Apr 2025 – Nov 2025</div>
+            </div>
+            <div class="job-subhead">Impact Highlights</div>
+            <ul>
+              <li>Led stabilization of enterprise WordPress ecosystems, raising Lighthouse scores from ~40–60 → <strong>90+</strong>.</li>
+              <li>Diagnosed systemic failures across PHP, MySQL, and DNS, shipping durable fixes for high-traffic sites.</li>
+              <li>Built internal similarity clustering tools (Node.js + PHP) to model page relationships across large inventories.</li>
+            </ul>
+            <div class="job-tech">
+              <strong>Tech:</strong> PHP, Node.js, WordPress, MySQL, Svelte, Lighthouse, Internal Tooling
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="job-header">
+              <div>
+                <p class="job-role">Senior Ecommerce Engineer (Contract / 1099)</p>
+                <p class="job-meta">Insight Marketing Solutions</p>
+              </div>
+              <div class="job-dates">Oct 2015 – Present</div>
+            </div>
+
+            <div class="job-subhead">Migration &amp; Rescue Projects</div>
+            <ul>
+              <li>
+                <strong>D2C Eyewear Brand (Rescue):</strong> Took over a failed WooCommerce to Shopify migration that had resulted in data corruption. Mapped complex optical prescription data attributes, remediated customer records, and successfully launched the Shopify store with intact order history.
+              </li>
+              <li>
+                <strong>PBLinear (Industrial/B2B):</strong> Led the end-to-end migration of PBLinear to Shopify. Managed the transfer of a complex industrial catalog (bearings/motion control) with intricate variant structures and technical specifications, ensuring zero downtime during cutover.
+              </li>
+            </ul>
+
+            <div class="job-subhead">Systems Integration</div>
+            <ul>
+              <li>
+                <strong>Construction Sector (JobNimbus + WooCommerce):</strong> Engineered a custom bidirectional integration for two construction firms. Built middleware to sync customer data, project statuses, and material orders between WooCommerce and JobNimbus, automating previously manual entry processes.
+              </li>
+              <li>
+                <strong>Automation:</strong> Reduced recurring operational overhead by <strong>80–90%</strong> for clients by scripting automated data flows between CMS, CRM, and Analytics platforms.
+              </li>
+            </ul>
+
+            <div class="job-tech">
+              <strong>Skills Used:</strong> Shopify, WooCommerce, JobNimbus API, PHP, Node.js, Data Migration, Schema Mapping, Custom Middleware, REST APIs
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="job-header">
+              <div>
+                <p class="job-role">Systems Administrator &amp; Web Developer</p>
+                <p class="job-meta">Hydra-Technologies</p>
+              </div>
+              <div class="job-dates">Dec 2015 – 2018</div>
+            </div>
+            <div class="job-subhead">Highlights</div>
+            <ul>
+              <li>Engineered CMS modules and platform features for service-based businesses with emphasis on stability.</li>
+              <li>Owned Linux server operations including SSL, security, backups, and database optimization.</li>
+              <li>Supported performance tuning and reliability improvements across multiple deployments.</li>
+            </ul>
+            <div class="job-tech">
+              <strong>Tech:</strong> WordPress, Shopify, BigCommerce, PHP, Linux, Apache, MySQL
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="job-header">
+              <div>
+                <p class="job-role">Full-Stack Web Developer</p>
+                <p class="job-meta">Armor Technologies</p>
+              </div>
+              <div class="job-dates">Jan 2014 – Nov 2015</div>
+            </div>
+            <div class="job-subhead">Highlights</div>
+            <ul>
+              <li>Built responsive websites and custom CMS solutions using PHP, JavaScript, and MySQL.</li>
+              <li>Improved site speed and backend configuration across hosting environments.</li>
+            </ul>
+            <div class="job-tech">
+              <strong>Tech:</strong> PHP, JavaScript, MySQL, HTML, CSS, cPanel/WHM
+            </div>
+          </article>
+
+        </section>
+      </div>
+
+      <section class="panel" id="education">
+        <div class="panel-head">
+          <h3>Education</h3>
+          <div class="panel-bar"></div>
+        </div>
+        <div class="edu-item">
+          <strong>High School Diploma</strong> — Freeport High School, Freeport, Illinois
+        </div>
+        <div class="footer-note">
+          Preferred contact: Email or LinkedIn
+        </div>
+      </section>
+
+    </div>
+  </main>
+</body>
+</html>
